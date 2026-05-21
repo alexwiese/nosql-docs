@@ -8,6 +8,12 @@ ms.service: azure-cosmos-db
 ms.topic: concept-article
 ms.date: 05/21/2026
 ai-usage: ai-assisted
+appliesto:
+  - ✅ NoSQL
+  - ✅ MongoDB
+  - ✅ Apache Cassandra
+  - ✅ Apache Gremlin
+  - ✅ Table
 ---
 
 # Soft delete for Azure Cosmos DB (preview)
@@ -19,7 +25,7 @@ This feature addresses a critical operational need: accidental deletion of datab
 ## Key benefits and use cases
 
 - **Rapid recovery and minimal downtime**: Soft delete allows a deleted Azure Cosmos DB resource to be restored within minutes, since the data never truly left the service.
-This approach is a huge improvement over traditional restore workflows that could take many hours. Applications can resume quickly after an accidental deletion, reducing potential downtime from days to minutes.
+  This approach is a huge improvement over traditional restore workflows that could take many hours. Applications can resume quickly after an accidental deletion, reducing potential downtime from days to minutes.
 
 - **Protection against human error**: It acts as a safety net for mistakes. If an administrator or automation script erroneously deletes a database or container, the data isn't lost – it can be undeleted promptly. Soft delete significantly lowers the risk of catastrophic data loss due to user error and avoids business downtime.
 
@@ -49,7 +55,7 @@ Once a resource (account, database, or container) is soft-deleted, it enters a r
 
 ## Minimum minutes before permanent delete
 
-**Retention Period**: Soft-deleted resources remain recoverable for a configured Retention Period. By default, the retention period is 14 days (plans to be reduced to one day in public preview), but administrators can adjust this setting per account. You might choose a shorter retention (minimum 3 day) for lower storage overhead or a longer period (for example, 30 days) for extra safety. During this retention window, the resource can be restored at any time. Once the retention period elapses, the service automatically purges the resource, irreversibly removing it. However, user can still restore backup.
+**Retention Period**: Soft-deleted resources remain recoverable for a configured Retention Period. By default, the retention period is 14 days (plans to be reduced to one day in public preview), but administrators can adjust this setting per account. You might choose a shorter retention (minimum 3 day) for lower storage overhead or a longer period (for example, 30 days) for extra safety. During this retention window, the resource can be restored at any time. Once the retention period elapses, or if the resource is explicitly purged earlier, the service permanently removes it and it can no longer be restored through soft delete.
 
 - Example: If the retention is set to 14 days and a container is deleted on May 1, it will be kept until May 15. On or shortly after May 15, if not recovered, Azure Cosmos DB will purge that container and its data permanently. Between May 1 and May 15, the container can be recovered with all its content intact, or if an authorized user explicitly purges it earlier, the resource is permanently deleted.
 
@@ -79,7 +85,7 @@ At any point during the retention period, an authorized user can undelete or rec
 
 To recover a resource, use Azure management tools (once the feature is broadly released).
 
-For example, Azure CLI commands are available for recovery of database or container. The Azure portal also offers a user-friendly interface (for example, a "Recycle Bin" or recover options in Data Explorer) to select a soft-deleted item and recover it. All recover operations are protected by Azure role-based access control (for example, only Account Contributors or higher roles can initiate an undelete).
+For example, Azure CLI commands are available for recovery of database or container. The Azure portal also offers a user-friendly interface (for example, a "Recycle Bin" or recover options in Data Explorer) to select a soft-deleted item and recover it. All recover operations are protected by Azure role-based access control (for example, only users assigned the built-in **Cosmos DB Account Contributor** role, also listed as **DocumentDB Account Contributor** in the [Azure built-in roles reference](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles), or higher-privileged roles can initiate an undelete).
 
 ## Permanent deletion (purge)
 
@@ -108,7 +114,7 @@ Normal operations on existing data are unaffected. The system's background tasks
 
 ### Security and access control
 
-Only users with sufficient privileges (for example, Azure Cosmos DB Account Contributor or Owner roles) can soft-delete or restore resources. Soft-deleted data isn't accessible to any read or write operations, so it remains secure in that interim state.
+Only users with sufficient privileges (for example, Cosmos DB Account Contributor or Owner roles) can soft-delete or restore resources. Soft-deleted data isn't accessible to any read or write operations, so it remains secure in that interim state.
 
 ### Management interfaces
 
