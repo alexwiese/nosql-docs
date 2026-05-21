@@ -5,7 +5,7 @@ description: Learn about Azure Cosmos DB soft delete, a data resiliency feature 
 author: balaksms
 ms.author: balaks
 ms.service: azure-cosmos-db
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 05/21/2026
 ---
 
