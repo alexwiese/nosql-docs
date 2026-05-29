@@ -10,10 +10,6 @@ ms.date: 05/22/2026
 ai-usage: ai-assisted
 appliesto:
   - ✅ NoSQL
-  - ✅ MongoDB
-  - ✅ Apache Cassandra
-  - ✅ Apache Gremlin
-  - ✅ Table
 ---
 
 # Soft delete for Azure Cosmos DB (preview)
@@ -176,7 +172,7 @@ No. Resource names are reserved during the retention period. You must purge the 
 
 ### Is soft delete available for all compatibility APIs in Azure Cosmos DB?
 
-**Yes**. Soft delete supports Azure Cosmos DB for NoSQL, MongoDB, Apache Cassandra, Apache Gremlin, and Table.
+**No**. Soft delete is supported only for Azure Cosmos DB for NoSQL. MongoDB, Apache Cassandra, Apache Gremlin, and Table aren't supported.
 
 ### Is soft delete available in the Azure portal?
 
