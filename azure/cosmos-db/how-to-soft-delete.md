@@ -11,18 +11,18 @@ appliesto:
   - ✅ NoSQL
 ---
 
- # Configure and manage soft delete in Azure Cosmos DB
+# Configure and manage soft delete in Azure Cosmos DB
  
  This article explains how to enable soft delete, recover soft-deleted resources, and permanently purge resources in Azure Cosmos DB.
  
- ## Prerequisites
+## Prerequisites
  
  - An Azure Cosmos DB account.
  - Sufficient permissions (Cosmos DB Account Contributor or Owner role).
  - Your subscription must be registered for the Azure Cosmos DB soft delete preview feature. For registration steps, see [Register your subscription](soft-delete.md#register-your-subscription).
 
  
- ## Configure soft delete
+## Configure soft delete
  
  When soft delete is enabled on an account, any regular delete operation automatically becomes a soft delete. There's no separate action or API required. Whether you delete a resource through the Azure portal, SDK, or ARM API, the resource is soft-deleted and retained for the configured retention period.
  
@@ -43,7 +43,7 @@ appliesto:
      :::image type="content" source="media/how-to-softdelete/enable-soft-delete.png" alt-text="Screenshot showing how to enable soft delete and configure retention period in the Azure portal.":::
 
  
- ## Recover a soft-deleted resource
+## Recover a soft-deleted resource
  
   Follow these steps to recover soft delete cosmos db resource using Azure portal.
 
@@ -58,7 +58,7 @@ appliesto:
     :::image type="content" source="media/how-to-softdelete/recover-soft-delete.png" alt-text="Screenshot showing the Soft Deleted Resources page with a soft-deleted container and the Restore and Purge action buttons.":::
 
 
- ## Purge a soft-deleted resource
+## Purge a soft-deleted resource
  
  Purging permanently deletes a soft-deleted resource before the retention period ends. Once purged, the resource can't be recovered through soft delete.
  
