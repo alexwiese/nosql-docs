@@ -1,15 +1,15 @@
- ---
- title: Configure and manage soft delete
- titleSuffix: Azure Cosmos DB
- description: Learn how to configure soft delete, recover soft-deleted resources, and purge resources in Azure Cosmos DB.
- author: balaksms
- ms.author: balaks
- ms.service: azure-cosmos-db
- ms.topic: how-to
- ms.date: 05/29/2026
- appliesto:
-   - ✅ NoSQL
- ---
+---
+title: Configure and manage soft delete
+titleSuffix: Azure Cosmos DB
+description: Learn how to configure soft delete, recover soft-deleted resources, and purge resources in Azure Cosmos DB.
+author: balaksms
+ms.author: balaks
+ms.service: azure-cosmos-db
+ms.topic: how-to
+ms.date: 05/29/2026
+appliesto:
+  - ✅ NoSQL
+---
 
  # Configure and manage soft delete in Azure Cosmos DB
  
