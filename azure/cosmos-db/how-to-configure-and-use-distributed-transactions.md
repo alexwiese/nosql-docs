@@ -32,24 +32,24 @@ Before you begin, make sure you have:
   - Run on a **public Azure cloud region**. Sovereign, air-gapped, and government clouds aren't supported in preview.
   - Be a **single-write-region** account. Multi-region write accounts aren't supported in preview.
   - Not be configured with any of the following features:
-    -  **Customer-Managed Keys (CMK)**
-    -  **Per-Partition Automatic Failover (PPAF)**
-    -  **Continuous backup**
-    -  **Long-Term Retention**
-    -  **Partition Merge**
-    -  **Hierarchical Partition Keys (HPK)**
-    -  **Fabric Native databases**
+    - **Customer-managed keys (CMK)**
+    - **Per-partition automatic failover (PPAF)**
+    - **Continuous backup**
+    - **Long-term retention**
+    - **Partition merge**
+    - **Hierarchical partition keys (HPK)**
+    - **Fabric native databases**
 - The latest version of the **Azure Cosmos DB .NET v3 SDK** (`Microsoft.Azure.Cosmos`) from NuGet.
 
 ## Request enrollment for your account
 
 Distributed transactions are a **public preview** feature. Self-service enrollment through the Azure portal, Azure CLI, or PowerShell is currently **not** available.
 
-To request enrollment, submit your onboarding request at [https://aka.ms/cosmosdb/dtx-onboard](https://aka.ms/cosmosdb/dtx-onboard). Requests are typically fulfilled within 1-2 business days. You'll receive a confirmation once your account is ready.
+To request enrollment, submit the [distributed transactions onboarding form](https://aka.ms/cosmosdb/dtx-onboard). Requests are typically fulfilled within one to two business days. You receive a confirmation after your account is ready.
 
 ## Install the required .NET SDK
 
-Add the latest preview version (v3.62.0-preview.0) of the Azure Cosmos DB .NET SDK to your project.
+Add the latest preview version ([v3.62.0-preview.0](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.62.0-preview.0)) of the Azure Cosmos DB .NET SDK to your project.
 
 ```dotnetcli
 dotnet add package Microsoft.Azure.Cosmos --version 3.62.0-preview.0
@@ -57,20 +57,11 @@ dotnet add package Microsoft.Azure.Cosmos --version 3.62.0-preview.0
 
 ## Initialize the client
 
-Initialize a `CosmosClient` against your enrolled account using either an account key or Microsoft Entra ID (formerly Azure AD).
+Initialize a `CosmosClient` against your enrolled account using either Microsoft Entra ID or an account key.
 
-### Option A: Account key
+#### [Microsoft Entra ID](#tab/entra-id)
 
-```csharp
-using Microsoft.Azure.Cosmos;
-
-string endpoint = "https://<your-account>.documents.azure.com:443/";
-string key = "<your-primary-key>";
-
-CosmosClient client = new CosmosClient(endpoint, key);
-```
-
-### Option B: Microsoft Entra ID (recommended for production)
+Microsoft Entra ID is recommended for production. To set up your account with the required role assignments and credentials, see [Use role-based access control to connect to Azure Cosmos DB for NoSQL](how-to-connect-role-based-access-control.md).
 
 ```csharp
 using Microsoft.Azure.Cosmos;
@@ -83,11 +74,24 @@ CosmosClient client = new CosmosClient(
     new DefaultAzureCredential());
 ```
 
-The identity used must have data-plane write permissions (for example, the **Cosmos DB Built-in Data Contributor** role) on **every** container that participates in a transaction. Role checks occur per individual operation inside the transaction batch.
+#### [Account key](#tab/account-key)
+
+```csharp
+using Microsoft.Azure.Cosmos;
+
+string endpoint = "https://<your-account>.documents.azure.com:443/";
+string key = "<your-primary-key>";
+
+CosmosClient client = new CosmosClient(endpoint, key);
+```
+
+---
+
+The identity you use must have data-plane write permissions (for example, the **Cosmos DB Built-in Data Contributor** role) on every container that participates in a transaction. Role checks occur per individual operation inside the transaction batch.
 
 ## Commit a multi-partition write transaction
 
-The .NET v3 SDK adds `CreateDistributedWriteTransaction()` API on `CosmosClient`. Chain one operation per item, then call `CommitTransactionAsync` to submit the entire batch as a single atomic unit.
+The .NET v3 SDK adds the `CreateDistributedWriteTransaction()` API to `CosmosClient`. Chain one operation per item, then call `CommitTransactionAsync` to submit the entire batch as a single atomic unit.
 
 The following example atomically transfers 100 units from `account-A` to `account-B` and records the corresponding entry in the `ledger` container. The two accounts live in different logical partitions of the `accounts` container, and the ledger entry lives in a separate container.
 
@@ -159,7 +163,7 @@ For single-item reads, or for unrelated items where mutual consistency isn't req
 In a multi-region account, distributed transactions are **atomic within the write region only**. Multi-region write accounts aren't supported in preview — the account must have a single write region.
 
 - All transactional reads and writes are routed to the account's **write/hub region** by the SDK.
-- Committed data replicates to secondary regions **asynchronously and per-partition**. Readers in secondary regions may temporarily observe partial updates until replication catches up.
+- Committed data replicates to secondary regions **asynchronously and per-partition**. Readers in secondary regions might temporarily observe partial updates until replication catches up.
 
 For applications that require global read-after-write of transactional data, either:
 
@@ -169,23 +173,15 @@ For applications that require global read-after-write of transactional data, eit
 ## Limits in public preview
 
 | Limit | Value |
-|---|---|
+| --- | --- |
 | Maximum operations per transaction | 100 |
 | Maximum payload size per transaction | 2 MB |
 
-
-These limits may change before general availability.
+These limits might change before general availability.
 
 ## Supported APIs and SDKs
 
-Currently, only the **NoSQL (Core SQL) API** is supported.
-
-| SDK | Status |
-|---|---|
-| .NET (C#) v3 | Available |
-| Java | Coming soon |
-| Python | Coming soon |
-| Node.js | Coming soon |
+Currently, only the **NoSQL (Core SQL) API** is supported. Distributed transactions are available in the **.NET v3 SDK**. Support for Java, Python, and Node.js is coming soon.
 
 ## Related content
 
