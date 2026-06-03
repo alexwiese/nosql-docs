@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 # Visual Studio Code extension for Azure Cosmos DB
 
-The Azure Cosmos DB extension for Visual Studio Code is a versatile tool that enables you to connect to Azure Cosmos DB accounts, browse databases and containers, query data, and manage documents directly from your editor. It supports both cloud accounts and local emulator environments so you can stay in your development workflow without switching to the Azure portal.
+The Azure Cosmos DB extension for Visual Studio Code is a versatile tool that you can use to connect to Azure Cosmos DB accounts, browse databases and containers, query data, and manage documents directly from your editor. It supports both cloud accounts and local emulator environments so you can stay in your development workflow without switching to the Azure portal.
 
 :::image type="content" source="media/browse-accounts-databases/browse-accounts-databases.png" alt-text="Screenshot of the Azure Cosmos DB extension showing the resource tree in Visual Studio Code." lightbox="media/browse-accounts-databases/browse-accounts-databases.png":::
 
