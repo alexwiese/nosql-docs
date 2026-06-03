@@ -5,7 +5,7 @@ author: meredithmooreux
 ms.author: merae
 ms.service: azure-cosmos-db
 ms.topic: how-to
-ms.date: 09/03/2025
+ms.date: 06/03/2026
 ai-usage: ai-assisted
 appliesto:
   - ✅ NoSQL
@@ -77,7 +77,7 @@ The Custom Column Selector in Azure Cosmos DB Data Explorer allows you to custom
 
 1. Once in Data Explorer, open the collection you want to query, select Items.
 
-1. Select on the ellipsis menu on the top right of any Column, select Edit Column
+1. Select the ellipsis menu on the top right of any Column, select Edit Column
 
 1. Select the columns you want to display and save your settings.
 
@@ -87,19 +87,19 @@ The Custom Column Selector in Azure Cosmos DB Data Explorer allows you to custom
 
 1. Once in Data Explorer, open the collection you want to query, select Items.
 
-1. Select on the ellipsis menu on the top right of any Column, select Remove Column.
+1. Select the ellipsis menu on the top right of any Column, select Remove Column.
 
 1. **Sort your Column View ascending or descending**
  
 1. Once in Data Explorer, open the collection you want to query, select Items.
 
-1. Select on the ellipsis menu on the top right of any Column, select Remove Column.
+1. Select the ellipsis menu on the top right of any Column, select Remove Column.
 
 ### Reset your Column View
 
 1. Once in Data Explorer, open the collection you want to query, select Items.
 
-1. Select on the ellipsis menu on the top right of any Column, select Edit Column.
+1. Select the ellipsis menu on the top right of any Column, select Edit Column.
 
 1. Select Reset to return to the default view. Or you can Clear your Filter History, Columns, and Viewport settings by selecting the gear icon in the top right Data Explorer Global menu and select Clear History.
 
@@ -117,7 +117,7 @@ Filter History enables you to quickly revisit and apply previous filters. This f
 
 1. Your filter will be automatically saved and added to the Default filter list in the filter dialog after applying the filter.
 
-1. To reapply a previous filter, select on the Edit Filter button.
+1. To reapply a previous filter, select the Edit Filter button.
 
 1. Clear any Filter from the filter window. This step is required to be able to view your saved Filters.
 
@@ -166,8 +166,8 @@ In the Data Explorer, you can configure a limit to the request units per second 
 
 ## Use with Microsoft Entra authentication
 
-   > [!NOTE]
-   > Microsoft Entra authentication for data operations is currently only supported with Azure Cosmos DB for NoSQL.
+> [!NOTE]
+> Microsoft Entra authentication for data operations is currently supported only for accounts that use Azure Cosmos DB for NoSQL.
 
 You can use Microsoft Entra-based authentication within the explorer by enabling it via configuration. For more information about role-based access control, see the [security guide](security.md).
 

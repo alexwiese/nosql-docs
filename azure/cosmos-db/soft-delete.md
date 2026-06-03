@@ -10,15 +10,11 @@ ms.date: 05/22/2026
 ai-usage: ai-assisted
 appliesto:
   - ✅ NoSQL
-  - ✅ MongoDB
-  - ✅ Apache Cassandra
-  - ✅ Apache Gremlin
-  - ✅ Table
 ---
 
 # Soft delete for Azure Cosmos DB (preview)
 
-Azure Cosmos DB soft delete is a data resiliency feature that retains deleted resources (accounts, databases, containers) for a configurable period (default 14 days) instead of permanently removing them at once. Soft delete enables fast recovery from accidental deletions without requiring a restore from backups. In effect, when soft delete is active, deleting an Azure Cosmos DB resource marks it as "soft-deleted" like a recycle bin so that it remains internally preserved and can be restored within the retention window. After the retention period expires or if an authorized user explicitly purges it earlier, the resource is permanently deleted.
+Azure Cosmos DB soft delete is a data resiliency feature that retains deleted resources (accounts, databases, containers) for a configurable period (default 1 day) instead of permanently removing them at once. Soft delete enables fast recovery from accidental deletions without requiring a restore from backups. In effect, when soft delete is active, deleting an Azure Cosmos DB resource marks it as "soft-deleted" like a recycle bin so that it remains internally preserved and can be restored within the retention window. After the retention period expires or if an authorized user explicitly purges it earlier, the resource is permanently deleted.
 
 This feature addresses a critical operational need: accidental deletion of databases or containers can currently lead to extended downtime and complex restore procedures. Soft delete dramatically reduces downtime by allowing in-place "undo" of deletions in minutes. It provides a safety net so that if an Azure Cosmos DB resource is mistakenly removed, it can be quickly recovered with minimal disruption.
 
@@ -41,7 +37,7 @@ This feature addresses a critical operational need: accidental deletion of datab
 
 The feature is enabled at the Azure Cosmos DB account level along with the Retention policy. Once soft delete is turned on for an account, all deletions of databases or containers in that account use soft-delete behavior. You can't target specific databases or containers to have different settings – it's an account-wide setting. If soft delete isn't enabled on an account, deletions operate normally, that is, immediate permanent deletion.
 
-When soft delete is enabled, deleting an Azure Cosmos DB account marks the entire account and all child resources as soft-deleted. Deleting a database within a soft-delete-enabled account soft-deletes that database and all containers within it. Deleting an individual container (collection/graph/table) soft-deletes just that container. This cascading behavior ensures no orphaned resources remain. If you restore a parent resource, such as an account or database, your operation brings back all its children unless you soft-deleted the child resources before soft-deleting the parent.
+When soft delete is enabled, deleting an Azure Cosmos DB account marks the entire account and all child resources as soft-deleted. Deleting a database within a soft-delete-enabled account soft-deletes that database and all containers within it. Deleting a container soft-deletes just that container. This cascading behavior ensures no orphaned resources remain. If you restore a parent resource, such as an account or database, your operation brings back all its children unless you soft-deleted the child resources before soft-deleting the parent.
 
 ### Soft-deleted state
 
@@ -55,7 +51,7 @@ Once a resource (account, database, or container) is soft-deleted, it enters a r
 
 ## Retention
 
-**Retention Period**: Soft-deleted resources remain recoverable for a configured retention period. By default, the retention period is 14 days, but administrators can adjust this setting per account from 1 to 30 days. You might choose a shorter retention, such as one day, for lower storage overhead or a longer period, such as 30 days, for extra safety. During this retention window, the resource can be restored at any time. Once the retention period elapses, or if the resource is explicitly purged earlier, the service permanently removes it and it can no longer be restored through soft delete.
+**Retention Period**: Soft-deleted resources remain recoverable for a configured retention period. By default, the retention period is 1 day, but administrators can adjust this setting per account from 1 to 30 days. You might choose a shorter retention, such as one day, for lower storage overhead or a longer period, such as 30 days, for extra safety. During this retention window, the resource can be restored at any time. Once the retention period elapses, or if the resource is explicitly purged earlier, the service permanently removes it and it can no longer be restored through soft delete.
 
 - Example: If the retention is set to 14 days and a container is deleted on May 1, it will be kept until May 15. On or shortly after May 15, if not recovered, Azure Cosmos DB will purge that container and its data permanently. Between May 1 and May 15, the container can be recovered with all its content intact, or if an authorized user explicitly purges it earlier, the resource is permanently deleted.
 
@@ -148,7 +144,7 @@ Register your subscription for access to the preview soft delete feature in Azur
 
 ### What is soft delete in Azure Cosmos DB?
 
-Soft delete is a feature that retains deleted Azure Cosmos DB resources (accounts, databases, containers) for a configurable retention period (default 14 days (plans to change it to one day), allowing recovery before permanent deletion.
+Soft delete is a feature that retains deleted Azure Cosmos DB resources (accounts, databases, containers) for a configurable retention period (default 1 day), allowing recovery before permanent deletion.
 
 ### How do I enable soft delete?
 
@@ -176,7 +172,7 @@ No. Resource names are reserved during the retention period. You must purge the 
 
 ### Is soft delete available for all compatibility APIs in Azure Cosmos DB?
 
-**Yes**. Soft delete supports Azure Cosmos DB for NoSQL, MongoDB, Apache Cassandra, Apache Gremlin, and Table.
+**No**. Soft delete is supported only for Azure Cosmos DB for NoSQL. MongoDB, Apache Cassandra, Apache Gremlin, and Table aren't supported.
 
 ### Is soft delete available in the Azure portal?
 
