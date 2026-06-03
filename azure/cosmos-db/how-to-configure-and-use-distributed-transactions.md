@@ -61,7 +61,7 @@ Initialize a `CosmosClient` against your enrolled account by using either Micros
 
 ### [Microsoft Entra ID](#tab/entra-id)
 
-Use Microsoft Entra ID is recommended for production. To set up your account with the required role assignments and credentials, see [Use role-based access control to connect to Azure Cosmos DB for NoSQL](how-to-connect-role-based-access-control.md).
+Use Microsoft Entra ID for production. To set up your account with the required role assignments and credentials, see [Use role-based access control to connect to Azure Cosmos DB for NoSQL](how-to-connect-role-based-access-control.md).
 
 ```csharp
 using Microsoft.Azure.Cosmos;
