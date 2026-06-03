@@ -7,6 +7,7 @@ ms.author: balaks
 ms.service: azure-cosmos-db
 ms.topic: how-to
 ms.date: 05/29/2026
+ai-usage: ai-assisted
 appliesto:
   - ✅ NoSQL
 ---
