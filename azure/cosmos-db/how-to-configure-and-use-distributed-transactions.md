@@ -19,7 +19,7 @@ appliesto:
 
 This article shows you how to enable distributed transactions on an Azure Cosmos DB for NoSQL account and use them from the .NET SDK to commit atomic read and write operations that span multiple logical partitions, containers, and databases within the same account and region.
 
-The examples in this article use a single scenario — a `banking` database with two containers, `accounts` (partitioned by account ID) and `ledger` (partitioned by posting month) — so the same items appear across the read and write examples.
+The examples in this article use a single scenario - a `banking` database with two containers, `accounts` (partitioned by account ID) and `ledger` (partitioned by posting month) - so the same items appear across the read and write examples.
 
 ## Prerequisites
 
@@ -32,45 +32,36 @@ Before you begin, make sure you have:
   - Run on a **public Azure cloud region**. Sovereign, air-gapped, and government clouds aren't supported in preview.
   - Be a **single-write-region** account. Multi-region write accounts aren't supported in preview.
   - Not be configured with any of the following features:
-    -  **Customer-Managed Keys (CMK)**
-    -  **Per-Partition Automatic Failover (PPAF)**
-    -  **Continuous backup**
-    -  **Long-Term Retention**
-    -  **Partition Merge**
-    -  **Hierarchical Partition Keys (HPK)**
-    -  **Fabric Native databases**
+    - **Customer-managed keys (CMK)**
+    - **Per-partition automatic failover (PPAF)**
+    - **Continuous backup**
+    - **Long-term retention**
+    - **Partition merge**
+    - **Hierarchical partition keys (HPK)**
+    - **Fabric native databases**
 - The latest version of the **Azure Cosmos DB .NET v3 SDK** (`Microsoft.Azure.Cosmos`) from NuGet.
 
 ## Request enrollment for your account
 
-Distributed transactions are a **public preview** feature. Self-service enrollment through the Azure portal, Azure CLI, or PowerShell is currently **not** available.
+Distributed transactions are a **public preview** feature. Self-service enrollment through the Azure portal, Azure CLI, or PowerShell isn't currently available.
 
-To request enrollment, submit your onboarding request at [https://aka.ms/cosmosdb/dtx-onboard](https://aka.ms/cosmosdb/dtx-onboard). Requests are typically fulfilled within 1-2 business days. You'll receive a confirmation once your account is ready.
+To request enrollment, submit the [distributed transactions onboarding form](https://aka.ms/cosmosdb/dtx-onboard). Requests are typically fulfilled within one to two business days. You receive a confirmation after your account is ready.
 
 ## Install the required .NET SDK
 
-Add the latest version o Azure Cosmos DB .NET SDK to your project.
+Add the latest preview version ([v3.62.0-preview.0](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.62.0-preview.0)) of the Azure Cosmos DB .NET SDK to your project.
 
 ```dotnetcli
-dotnet add package Microsoft.Azure.Cosmos
+dotnet add package Microsoft.Azure.Cosmos --version 3.62.0-preview.0
 ```
 
 ## Initialize the client
 
-Initialize a `CosmosClient` against your enrolled account using either an account key or Microsoft Entra ID (formerly Azure AD).
+Initialize a `CosmosClient` against your enrolled account by using either Microsoft Entra ID or an account key.
 
-### Option A: Account key
+### [Microsoft Entra ID](#tab/entra-id)
 
-```csharp
-using Microsoft.Azure.Cosmos;
-
-string endpoint = "https://<your-account>.documents.azure.com:443/";
-string key = "<your-primary-key>";
-
-CosmosClient client = new CosmosClient(endpoint, key);
-```
-
-### Option B: Microsoft Entra ID (recommended for production)
+Use Microsoft Entra ID for production. To set up your account with the required role assignments and credentials, see [Use role-based access control to connect to Azure Cosmos DB for NoSQL](how-to-connect-role-based-access-control.md).
 
 ```csharp
 using Microsoft.Azure.Cosmos;
@@ -83,11 +74,24 @@ CosmosClient client = new CosmosClient(
     new DefaultAzureCredential());
 ```
 
-The identity used must have data-plane write permissions (for example, the **Cosmos DB Built-in Data Contributor** role) on **every** container that participates in a transaction. Role checks occur per individual operation inside the transaction batch.
+### [Account key](#tab/account-key)
+
+```csharp
+using Microsoft.Azure.Cosmos;
+
+string endpoint = "https://<your-account>.documents.azure.com:443/";
+string key = "<your-primary-key>";
+
+CosmosClient client = new CosmosClient(endpoint, key);
+```
+
+---
+
+The identity you use must have data-plane write permissions (for example, the **Cosmos DB Built-in Data Contributor** role) on every container that participates in a transaction. Role checks occur per individual operation inside the transaction batch.
 
 ## Commit a multi-partition write transaction
 
-The .NET v3 SDK adds `CreateDistributedWriteTransaction()` API on `CosmosClient`. Chain one operation per item, then call `CommitTransactionAsync` to submit the entire batch as a single atomic unit.
+The .NET v3 SDK adds the `CreateDistributedWriteTransaction()` API to `CosmosClient`. Chain one operation per item, then call `CommitTransactionAsync` to submit the entire batch as a single atomic unit.
 
 The following example atomically transfers 100 units from `account-A` to `account-B` and records the corresponding entry in the `ledger` container. The two accounts live in different logical partitions of the `accounts` container, and the ledger entry lives in a separate container.
 
@@ -112,7 +116,7 @@ if (response.IsSuccessStatusCode)
 }
 ```
 
-All three items are either committed together or none of them are. There's no partial state.
+Commit all three items together or none of them. There's no partial state.
 
 ### Mix operation types in a single transaction
 
@@ -131,7 +135,7 @@ await client
 
 Use `CreateDistributedReadTransaction()` when you need a **point-in-time consistent snapshot** of items that live in different logical partitions, containers, or databases. Unlike issuing several independent `ReadItemAsync` calls, a distributed read transaction returns all items as they existed at a single committed instant, so the reader never observes a partially applied write transaction.
 
-Chain one `ReadItem` call per item, then call `CommitTransactionAsync` to fetch the snapshot:
+Chain one `ReadItem` call per item, and then call `CommitTransactionAsync` to fetch the snapshot:
 
 ```csharp
 DistributedReadTransaction txn = client.CreateDistributedReadTransaction();
@@ -146,20 +150,20 @@ DistributedTransactionResponse response = await txn.CommitTransactionAsync();
 
 Distributed read transactions are most useful when correctness depends on the **mutual consistency** of items spread across partitions. Common scenarios include:
 
-- **Cross-account balance reconciliation.** Read every account balance involved in a multi-leg funds transfer to confirm that debits and credits sum to zero, without the risk of reading one leg before and the other after a concurrent transfer commits.
+- **Cross-account balance reconciliation.** Read every account balance involved in a multileg funds transfer to confirm that debits and credits sum to zero, without the risk of reading one leg before and the other after a concurrent transfer commits.
 - **Inventory and order validation.** Read a stock item and the corresponding pending-orders record together before deciding whether to accept a new order, so the available quantity and reserved quantity always reflect the same instant.
 - **Audit and compliance snapshots.** Capture a coherent view of related records (for example, an order, its line items, and the customer profile that live in different containers) for reporting, exports, or regulatory evidence.
 - **Cache or read-model rebuilds.** Hydrate a denormalized view or materialized projection from several source containers without seeing torn writes from in-flight distributed write transactions.
 
-For single-item reads, or for unrelated items where mutual consistency isn't required, continue to use `ReadItemAsync` — it has lower latency and consumes fewer request units.
+For single-item reads, or for unrelated items where mutual consistency isn't required, continue to use `ReadItemAsync` - it has lower latency and consumes fewer request units.
 
 
 ## Multi-region considerations
 
-In a multi-region account, distributed transactions are **atomic within the write region only**. Multi-region write accounts aren't supported in preview — the account must have a single write region.
+In a multiregion account, distributed transactions are **atomic within the write region only**. Preview doesn't support multiregion write accounts - the account must have a single write region.
 
-- All transactional reads and writes are routed to the account's **write/hub region** by the SDK.
-- Committed data replicates to secondary regions **asynchronously and per-partition**. Readers in secondary regions may temporarily observe partial updates until replication catches up.
+- - The SDK routes all transactional reads and writes to the account's **write region**.
+- Committed data replicates to secondary regions **asynchronously and per-partition**. Readers in secondary regions might temporarily observe partial updates until replication catches up.
 
 For applications that require global read-after-write of transactional data, either:
 
@@ -169,29 +173,17 @@ For applications that require global read-after-write of transactional data, eit
 ## Limits in public preview
 
 | Limit | Value |
-|---|---|
+| --- | --- |
 | Maximum operations per transaction | 100 |
 | Maximum payload size per transaction | 2 MB |
 
-
-These limits may change before general availability.
+These limits might change before general availability.
 
 ## Supported APIs and SDKs
 
-| API | Supported in preview |
-|---|---|
-| NoSQL (Core SQL) | Yes |
-| MongoDB | No |
-| Cassandra | No |
-| Table | No |
-| Gremlin | No |
+Currently, only the **NoSQL (Core SQL) API** supports distributed transactions. 
 
-| SDK | Status |
-|---|---|
-| .NET (C#) v3 | Available |
-| Java | Coming soon |
-| Python | Coming soon |
-| Node.js | Coming soon |
+The **.NET v3 SDK** supports distributed transactions. Support for other SDKs is coming soon.
 
 ## Related content
 
