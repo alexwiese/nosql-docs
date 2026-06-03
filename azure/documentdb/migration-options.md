@@ -67,7 +67,7 @@ The tools discussed in this article assist you in migrating your MongoDB workloa
 
 ### Azure DocumentDB Migration Extension
 
-Create and manage your migration jobs in **Visual Studio Code** with [Azure DocumentDB Migration Extension (Public Preview)](./how-to-migrate-vs-code-extension.md) — a solution designed for **simplicity**, **security**, and **zero downtime**.
+Create and manage your migration jobs in **Visual Studio Code** with [Azure DocumentDB Migration Extension](./how-to-migrate-vs-code-extension.md) — a solution designed for **simplicity**, **security**, and **zero downtime**.
 
 This tool provides clear, step-by-step guidance to help you migrate workloads without service interruptions. You can:
 
