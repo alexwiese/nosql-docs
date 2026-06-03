@@ -51,7 +51,7 @@ Once a resource (account, database, or container) is soft-deleted, it enters a r
 
 ## Retention
 
-**Retention Period**: Soft-deleted resources remain recoverable for a configured retention period. By default, the retention period is 14 days, but administrators can adjust this setting per account from 1 to 30 days. You might choose a shorter retention, such as one day, for lower storage overhead or a longer period, such as 30 days, for extra safety. During this retention window, the resource can be restored at any time. Once the retention period elapses, or if the resource is explicitly purged earlier, the service permanently removes it and it can no longer be restored through soft delete.
+**Retention Period**: Soft-deleted resources remain recoverable for a configured retention period. By default, the retention period is 1 day, but administrators can adjust this setting per account from 1 to 30 days. You might choose a shorter retention, such as one day, for lower storage overhead or a longer period, such as 30 days, for extra safety. During this retention window, the resource can be restored at any time. Once the retention period elapses, or if the resource is explicitly purged earlier, the service permanently removes it and it can no longer be restored through soft delete.
 
 - Example: If the retention is set to 14 days and a container is deleted on May 1, it will be kept until May 15. On or shortly after May 15, if not recovered, Azure Cosmos DB will purge that container and its data permanently. Between May 1 and May 15, the container can be recovered with all its content intact, or if an authorized user explicitly purges it earlier, the resource is permanently deleted.
 
