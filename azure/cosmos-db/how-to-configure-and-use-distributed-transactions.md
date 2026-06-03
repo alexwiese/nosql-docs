@@ -57,11 +57,11 @@ dotnet add package Microsoft.Azure.Cosmos --version 3.62.0-preview.0
 
 ## Initialize the client
 
-Initialize a `CosmosClient` against your enrolled account using either Microsoft Entra ID or an account key.
+Initialize a `CosmosClient` against your enrolled account by using either Microsoft Entra ID or an account key.
 
-#### [Microsoft Entra ID](#tab/entra-id)
+### [Microsoft Entra ID](#tab/entra-id)
 
-Microsoft Entra ID is recommended for production. To set up your account with the required role assignments and credentials, see [Use role-based access control to connect to Azure Cosmos DB for NoSQL](how-to-connect-role-based-access-control.md).
+Use Microsoft Entra ID is recommended for production. To set up your account with the required role assignments and credentials, see [Use role-based access control to connect to Azure Cosmos DB for NoSQL](how-to-connect-role-based-access-control.md).
 
 ```csharp
 using Microsoft.Azure.Cosmos;
@@ -74,7 +74,7 @@ CosmosClient client = new CosmosClient(
     new DefaultAzureCredential());
 ```
 
-#### [Account key](#tab/account-key)
+### [Account key](#tab/account-key)
 
 ```csharp
 using Microsoft.Azure.Cosmos;
@@ -181,7 +181,9 @@ These limits might change before general availability.
 
 ## Supported APIs and SDKs
 
-Currently, only the **NoSQL (Core SQL) API** is supported. Distributed transactions are available in the **.NET v3 SDK**. Support for Java, Python, and Node.js is coming soon.
+Currently, only the **NoSQL (Core SQL) API** supports distributed transactions. 
+
+The **.NET v3 SDK** supports distributed transactions. Support for other SDKs is coming soon.
 
 ## Related content
 
