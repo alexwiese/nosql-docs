@@ -19,7 +19,7 @@ appliesto:
 
 This article shows you how to enable distributed transactions on an Azure Cosmos DB for NoSQL account and use them from the .NET SDK to commit atomic read and write operations that span multiple logical partitions, containers, and databases within the same account and region.
 
-The examples in this article use a single scenario — a `banking` database with two containers, `accounts` (partitioned by account ID) and `ledger` (partitioned by posting month) — so the same items appear across the read and write examples.
+The examples in this article use a single scenario - a `banking` database with two containers, `accounts` (partitioned by account ID) and `ledger` (partitioned by posting month) - so the same items appear across the read and write examples.
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ Before you begin, make sure you have:
 
 ## Request enrollment for your account
 
-Distributed transactions are a **public preview** feature. Self-service enrollment through the Azure portal, Azure CLI, or PowerShell is currently **not** available.
+Distributed transactions are a **public preview** feature. Self-service enrollment through the Azure portal, Azure CLI, or PowerShell isn't currently available.
 
 To request enrollment, submit the [distributed transactions onboarding form](https://aka.ms/cosmosdb/dtx-onboard). Requests are typically fulfilled within one to two business days. You receive a confirmation after your account is ready.
 
@@ -116,7 +116,7 @@ if (response.IsSuccessStatusCode)
 }
 ```
 
-All three items are either committed together or none of them are. There's no partial state.
+Commit all three items together or none of them. There's no partial state.
 
 ### Mix operation types in a single transaction
 
@@ -135,7 +135,7 @@ await client
 
 Use `CreateDistributedReadTransaction()` when you need a **point-in-time consistent snapshot** of items that live in different logical partitions, containers, or databases. Unlike issuing several independent `ReadItemAsync` calls, a distributed read transaction returns all items as they existed at a single committed instant, so the reader never observes a partially applied write transaction.
 
-Chain one `ReadItem` call per item, then call `CommitTransactionAsync` to fetch the snapshot:
+Chain one `ReadItem` call per item, and then call `CommitTransactionAsync` to fetch the snapshot:
 
 ```csharp
 DistributedReadTransaction txn = client.CreateDistributedReadTransaction();
@@ -150,19 +150,19 @@ DistributedTransactionResponse response = await txn.CommitTransactionAsync();
 
 Distributed read transactions are most useful when correctness depends on the **mutual consistency** of items spread across partitions. Common scenarios include:
 
-- **Cross-account balance reconciliation.** Read every account balance involved in a multi-leg funds transfer to confirm that debits and credits sum to zero, without the risk of reading one leg before and the other after a concurrent transfer commits.
+- **Cross-account balance reconciliation.** Read every account balance involved in a multileg funds transfer to confirm that debits and credits sum to zero, without the risk of reading one leg before and the other after a concurrent transfer commits.
 - **Inventory and order validation.** Read a stock item and the corresponding pending-orders record together before deciding whether to accept a new order, so the available quantity and reserved quantity always reflect the same instant.
 - **Audit and compliance snapshots.** Capture a coherent view of related records (for example, an order, its line items, and the customer profile that live in different containers) for reporting, exports, or regulatory evidence.
 - **Cache or read-model rebuilds.** Hydrate a denormalized view or materialized projection from several source containers without seeing torn writes from in-flight distributed write transactions.
 
-For single-item reads, or for unrelated items where mutual consistency isn't required, continue to use `ReadItemAsync` — it has lower latency and consumes fewer request units.
+For single-item reads, or for unrelated items where mutual consistency isn't required, continue to use `ReadItemAsync` - it has lower latency and consumes fewer request units.
 
 
 ## Multi-region considerations
 
-In a multi-region account, distributed transactions are **atomic within the write region only**. Multi-region write accounts aren't supported in preview — the account must have a single write region.
+In a multiregion account, distributed transactions are **atomic within the write region only**. Preview doesn't support multiregion write accounts - the account must have a single write region.
 
-- All transactional reads and writes are routed to the account's **write/hub region** by the SDK.
+- - The SDK routes all transactional reads and writes to the account's **write region**.
 - Committed data replicates to secondary regions **asynchronously and per-partition**. Readers in secondary regions might temporarily observe partial updates until replication catches up.
 
 For applications that require global read-after-write of transactional data, either:
