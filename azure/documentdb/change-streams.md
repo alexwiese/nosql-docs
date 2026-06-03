@@ -13,7 +13,7 @@ ai-usage: ai-generated
 Change streams are a real-time stream of database changes that flows from your database to your application. This feature enables you to build reactive applications by subscribing to database changes, eliminating the need for continuous polling to detect changes.
 
 > [!NOTE]
-> Change stream support for multi-shard clusters is currently in preview. To enable this feature on your cluster, [create a support request](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+> Change stream support for multishard clusters is currently in preview. To enable this feature on your cluster, [create a support request](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
 ## Get started
 
