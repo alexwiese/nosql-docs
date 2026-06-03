@@ -5,7 +5,7 @@ author: meredithmooreux
 ms.author: merae
 ms.service: azure-cosmos-db
 ms.topic: how-to
-ms.date: 06/02/2026
+ms.date: 06/03/2026
 ai-usage: ai-assisted
 appliesto:
   - ✅ NoSQL
