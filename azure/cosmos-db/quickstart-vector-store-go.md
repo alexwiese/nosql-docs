@@ -1,8 +1,8 @@
 ---
 title: Quickstart - Azure Cosmos DB vector search with Go
 description: Use this quickstart to implement vector search in Azure Cosmos DB with Go. Store and query hotel data with embeddings.
-author: diberry
-ms.author: diberry
+author: seesharprun
+ms.author: sidandrews
 ms.reviewer: jcodella
 ms.devlang: golang
 ms.service: azure-cosmos-db

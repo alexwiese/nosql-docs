@@ -1,8 +1,8 @@
 ---
 title: Best practices for Python SDK
 description: Review a list of best practices for using the Azure Cosmos DB Python SDK in a performant manner.
-author: kushagraThapar
-ms.author: kuthapar
+author: seesharprun
+ms.author: sidandrews
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.custom: devx-track-python

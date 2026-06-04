@@ -2,8 +2,8 @@
 
 title: Quickstart - Azure Cosmos DB vector search with Java
 description: Use this quickstart to implement vector search in Azure Cosmos DB with Java. Store and query hotel data with embeddings.
-author: diberry
-ms.author: diberry
+author: seesharprun
+ms.author: sidandrews
 ms.reviewer: jcodella
 ms.devlang: java
 ms.service: azure-cosmos-db
