@@ -1,8 +1,8 @@
 ---
 title: Quickstart - Vector index with .NET
 description: Compare DiskANN, HNSW, and IVF vector search algorithms in Azure DocumentDB using the .NET client library with passwordless authentication.
-author: diberry
-ms.author: diberry
+author: seesharprun
+ms.author: sidandrews
 ms.reviewer: khelanmodi
 ms.devlang: csharp
 ms.topic: quickstart-sdk
