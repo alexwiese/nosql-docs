@@ -1,12 +1,12 @@
 ---
 title: Kafka Connect Sink Connector
 description: The Azure Cosmos DB sink connector allows you to export data from Apache Kafka topics to an Azure Cosmos DB database. The connector polls data from Kafka to write to containers in the database based on the topics subscription. 
-author: kushagrathapar
+author: seesharprun
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.topic: how-to
 ms.date: 05/13/2022
-ms.author: kuthapar
+ms.author: sidandrews
 appliesto:
   - ✅ NoSQL
 ---
