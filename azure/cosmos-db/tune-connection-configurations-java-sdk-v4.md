@@ -1,13 +1,13 @@
 ---
 title: Connection Configurations for Java SDK V4
 description: Learn how to tune connection configurations to improve Azure Cosmos DB database performance for Java SDK v4
-author: kushagraThapar
+author: seesharprun
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.devlang: java
 ms.topic: how-to
 ms.date: 04/22/2022
-ms.author: kuthapar
+ms.author: sidandrews
 ms.custom: devx-track-java, devx-track-extended-java
 appliesto:
   - ✅ NoSQL

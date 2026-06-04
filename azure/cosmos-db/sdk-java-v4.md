@@ -1,13 +1,13 @@
 ---
 title: Java SDK V4 for API for Nosql Release Notes and Resources
 description: Learn all about the Azure Cosmos DB Java SDK v4 for API for NoSQL and SDK including release dates, retirement dates, and changes made between each version of the Azure Cosmos DB SQL Async Java SDK.
-author: markjbrown
+author: seesharprun
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.devlang: java
 ms.topic: reference
 ms.date: 04/06/2021
-ms.author: kuthapar
+ms.author: sidandrews
 ms.custom: devx-track-java, devx-track-extended-java
 appliesto:
   - ✅ NoSQL

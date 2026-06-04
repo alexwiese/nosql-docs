@@ -1,8 +1,8 @@
 ---
 title: Troubleshoot HTTP 408 or request time out issues with the Java v4 SDK
 description: Learn how to diagnose and fix Java SDK request time out exceptions with the Java v4 SDK.
-author: kushagrathapar
-ms.author: kuthapar
+author: seesharprun
+ms.author: sidandrews
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.topic: troubleshooting
