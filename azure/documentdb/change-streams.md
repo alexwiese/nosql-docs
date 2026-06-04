@@ -412,6 +412,9 @@ In this update event, the `position` & `rating` for John are modified. The chang
 
 - With `updateDescription` option
 
+> [!NOTE]
+> Change stream support for multishard clusters is currently in preview. To enable this feature on your cluster, [create a support request](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+
 ```json
 {
   "operationType": "update",
