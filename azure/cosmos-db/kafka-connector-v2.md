@@ -1,12 +1,12 @@
 ---
 title: Use Kafka Connect V2 to Read and Write Data
 description: Kafka Connect V2 for Azure Cosmos DB is a connector to read from and write data to Azure Cosmos DB. Kafka Connect is a tool for scalable and reliably streaming data between Apache Kafka and other systems
-author: xinlian
+author: seesharprun
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.topic: how-to
 ms.date: 11/03/2024
-ms.author: xinlian
+ms.author: sidandrews
 appliesto:
   - ✅ NoSQL
 ---

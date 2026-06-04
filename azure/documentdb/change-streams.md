@@ -13,7 +13,7 @@ ai-usage: ai-generated
 Change streams are a real-time stream of database changes that flows from your database to your application. This feature enables you to build reactive applications by subscribing to database changes, eliminating the need for continuous polling to detect changes.
 
 > [!NOTE]
-> Change stream support for multi-shard clusters is currently in preview.
+> Change stream support for multishard clusters is currently in preview. To enable this feature on your cluster, [create a support request](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
 ## Get started
 
@@ -412,6 +412,9 @@ In this update event, the `position` & `rating` for John are modified. The chang
 
 - With `updateDescription` option
 
+> [!NOTE]
+> Change stream support for multishard clusters is currently in preview. To enable this feature on your cluster, [create a support request](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+
 ```json
 {
   "operationType": "update",
@@ -482,6 +485,9 @@ while (stream.hasNext()) {
 > Processing historical checkpoints is recommended during low-traffic periods to minimize the effect of extra resource consumption. Keep more storage (for clusters with 128 GB or lower storage) depending on the volume of data to be processed from historical point.
 
 ## Pre-images in change streams (preview)
+
+> [!NOTE]
+> Pre-image support is currently in preview. To enable this feature on your cluster, [create a support request](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
 By default, a change event shows you the document after a change. Enabling pre-images tells the system to also record the complete document before the change, exposed as `fullDocumentBeforeChange` in each event.
 

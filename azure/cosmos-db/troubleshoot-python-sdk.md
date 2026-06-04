@@ -1,10 +1,10 @@
 ---
 title: Diagnose and Troubleshoot Python SDK
 description: Use features like client-side logging and other third-party tools to identify, diagnose, and troubleshoot Azure Cosmos DB issues in Python SDK.
-author: kushagraThapar
+author: seesharprun
 ms.service: azure-cosmos-db
 ms.date: 04/08/2024
-ms.author: kuthapar
+ms.author: sidandrews
 ms.devlang: python
 ms.subservice: nosql
 ms.topic: troubleshooting

@@ -1,8 +1,8 @@
 ---
 title: Quickstart - Vector index with Python
 description: Compare vector index algorithms and similarity functions using the Python SDK in Azure DocumentDB to optimize search performance for your workload.
-author: diberry
-ms.author: diberry
+author: seesharprun
+ms.author: sidandrews
 ms.reviewer: khelanmodi
 ms.devlang: python
 ms.topic: quickstart-sdk
