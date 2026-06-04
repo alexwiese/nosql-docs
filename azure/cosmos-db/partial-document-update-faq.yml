@@ -2,8 +2,8 @@
 metadata:
   title: Frequently Asked Questions on Partial Document Update
   description: Frequently asked questions about partial document update for Azure Cosmos DB
-  author: abhirockzz
-  ms.author: abhishgu
+  author: seesharprun
+  ms.author: sidandrews
   ms.service: azure-cosmos-db
   ms.topic: faq
   ms.date: 09/16/2021

@@ -1,8 +1,8 @@
 ---
 title: Quickstart - Create a vector index with TypeScript
 description: Learn how to create a vector index in Azure Cosmos DB for NoSQL using the Azure Resource Manager SDK and TypeScript, then insert documents and run vector similarity queries.
-author: diberry
-ms.author: diberry
+author: seesharprun
+ms.author: sidandrews
 ms.reviewer: sidandrews
 ms.devlang: typescript
 ms.topic: quickstart-sdk
