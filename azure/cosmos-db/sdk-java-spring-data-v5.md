@@ -1,13 +1,13 @@
 ---
 title: Spring Data V5 for API for Nosql Release Notes and Resources
 description: Learn about the Spring Data Azure Cosmos DB v5 for API for NoSQL, including release dates, retirement dates, and changes made between each version of the Azure Cosmos DB SQL Async Java SDK.
-author: kushagrathapar
+author: seesharprun
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.devlang: java
 ms.topic: reference
 ms.date: 07/24/2023
-ms.author: kuthapar
+ms.author: sidandrews
 ms.custom: devx-track-java, devx-track-extended-java
 appliesto:
   - ✅ NoSQL
