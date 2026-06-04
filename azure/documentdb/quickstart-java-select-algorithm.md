@@ -1,8 +1,8 @@
 ---
 title: Quickstart - Vector index with Java
 description: Test and compare DiskANN, HNSW, and IVF vector indexes in Azure DocumentDB using Java to select the best algorithm for your vector search workload.
-author: diberry
-ms.author: diberry
+author: seesharprun
+ms.author: sidandrews
 ms.reviewer: khelanmodi
 ms.devlang: java
 ms.topic: quickstart-sdk

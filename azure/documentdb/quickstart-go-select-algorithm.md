@@ -1,8 +1,8 @@
 ---
 title: Quickstart - Vector index with Go
 description: Compare DiskANN, HNSW, and IVF vector index algorithms using Go to select and tune the optimal index for your workload
-author: diberry
-ms.author: diberry
+author: seesharprun
+ms.author: sidandrews
 ms.reviewer: khelanmodi
 ms.devlang: golang
 ms.topic: quickstart-sdk
