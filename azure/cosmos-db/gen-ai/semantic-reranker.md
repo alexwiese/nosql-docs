@@ -49,10 +49,10 @@ When you call Semantic Reranker, the response can contain multiple fields, inclu
 - **Inference latency**: The time spent by the service in the rerank request.
 - **Token usage**: The number of tokens consumed by the reranking request.
 
-## Set up Semantic Reranker in the Azure portal
+## Set up Semantic Reranker 
 
 > [!IMPORTANT]
->  Semantic Reranker is in preview. After enabling it in the Azure portal, allow up to 1 hour for activation.
+>  Semantic Reranker is in preview. You may need to run `az provider register -n Microsoft.InferenceService` using the [Azure CLI](https://learn.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) before enabling Semantic Reranker in the Azure Portal.
 
 Use the Azure portal to enable, disable, and configure Semantic Reranker for a specific Azure Cosmos DB resource.
 
