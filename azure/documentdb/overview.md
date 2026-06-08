@@ -11,16 +11,16 @@ ai-usage: ai-generated
 
 # What is Azure DocumentDB (with MongoDB compatibility)?
 
-Azure DocumentDB is a fully managed, open-source, [99.03% MongoDB-compatible](compatibility-query-language.md#compatibility-philosophy) database. Built-in AI, Azure integrations, and multicloud flexibility included for mission-critical applications.
+Azure DocumentDB is a fully managed, open-source, [99.03% MongoDB-compatible](compatibility-query-language.md#compatibility-philosophy) database. It includes built-in AI, Azure integrations, and multicloud flexibility for mission-critical applications.
 
 ## Open-source and community-driven
 
 [DocumentDB](https://github.com/documentdb/documentdb) is an open-source, MongoDB-compatible, Linux Foundation–governed document database released under the permissive MIT license.
-Azure DocumentDB is built on DocumentDB. Azure DocumentDB doesn't run the MongoDB database server or its codebase. [MongoDB's Server Side Public License (SSPL) licensing](https://en.wikipedia.org/wiki/Server_Side_Public_License) doesn't apply to DocumentDB or Azure DocumentDB.
+Azure DocumentDB is built on DocumentDB. Azure DocumentDB doesn't run the MongoDB database server or its codebase. [MongoDB's Server Side Public License (SSPL)](https://en.wikipedia.org/wiki/Server_Side_Public_License) doesn't apply to DocumentDB or Azure DocumentDB.
 
-DocumentDB delivers 99.03% MongoDB compatibility via the wire protocol and Binary JavaScript Object Notation (BSON) support, plus capabilities such as indexing and vector search, while keeping the implementation transparent and community-driven.
+DocumentDB delivers 99.03% MongoDB compatibility via the wire protocol and Binary JSON (BSON) support, plus capabilities such as indexing and vector search, while keeping the implementation transparent and community-driven.
 
-Azure DocumentDB pairs that open-source foundation with a fully managed Azure service, adding fully managed enterprise security, scalability, and reliability.
+Azure DocumentDB pairs that open-source foundation with a fully managed Azure service, adding enterprise security, scalability, and reliability.
 
 ## Flexible and scalable data management
 
@@ -34,7 +34,7 @@ Azure DocumentDB is designed to work seamlessly with MongoDB tools and drivers, 
 
 This compatibility also means you can integrate Azure DocumentDB into your existing development workflows, using popular tools like MongoDB Compass or the MongoDB shell. The result is a smooth development experience that accelerates your time to market.
 
-## Multicloud and hybrid-cloud
+## Multicloud and hybrid architectures
 
 DocumentDB enables true multicloud and hybrid architectures with zero data loss. The open-source database can run on-premises or in any cloud, and Azure DocumentDB extends the same capability as a fully managed Azure service. Together, they allow applications to use the same MongoDB-compatible interface and drivers across environments, while supporting cross-cloud replication and failover without data loss or application changes.
 
