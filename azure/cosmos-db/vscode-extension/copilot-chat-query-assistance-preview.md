@@ -18,10 +18,15 @@ ms.update-cycle: 180-days
 
 This preview capability uses Copilot Chat context to help draft and refine Azure Cosmos DB queries.
 
+> [!IMPORTANT]
+> This capability is currently available in preview. After installing the VS Code extension, switch to the **Pre-Release Version** by selecting **"Switch to Pre-Release Version"** in VS Code.
+>
+> :::image type="content" source="media/prerelease-version/prerelease-version.png" alt-text="Screenshot showing the Switch to Pre-Release Version option in Visual Studio Code for the Azure Cosmos DB extension.":::
+
 ## Prerequisites
 
 - Visual Studio Code with GitHub Copilot and GitHub Copilot Chat enabled.
-- Azure Databases extension with preview build installed.
+- [Azure Cosmos DB extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb) (Pre-Release version).
 - Connected Azure Cosmos DB for NoSQL account and container context.
 
 ## Use the @cosmosdb participant
