@@ -33,14 +33,14 @@ Authenticate by connecting to your account endpoint with Microsoft Entra ID:
 
 ```bash
 cosmosdbshell
-CS > connect https://<account-name>.documents.azure.com:443/ --auth-method entra-id
+CS > connect https://<account-name>.documents.azure.com:443/ --tenant=<tenant-id>
 ```
 
 The browser opens for Azure sign-in after you run `connect`. Complete the flow and the shell uses your Microsoft Entra ID credentials.
 
 **Configuration:**
 ```bash
-connect <account_endpoint> --auth-method entra-id
+connect <account_endpoint> --tenant=<tenant-id>
 ```
 
 **Security Benefits:**
@@ -73,9 +73,9 @@ Enable managed identity on Azure resource:
 }
 ```
 
-**In Cosmos DB Shell:**
+**From your terminal:**
 ```bash
-cosmosdbshell --auth-method managed-identity
+cosmosdbshell --connect https://<account-name>.documents.azure.com:443/ --connect-managed-identity=<client-id>
 ```
 
 **Security Configuration:**
@@ -492,15 +492,15 @@ cosmosdbshell --connection-string "$COSMOS_CONNECTION_STRING"
 ### ❌ Using account key in production
 
 ```bash
-# DON'T use keys in production
-cosmosdbshell --auth-method key
+# DON'T use keys in production with hardcoded connection strings
+cosmosdbshell --connect "AccountEndpoint=https://myaccount.documents.azure.com:443/;AccountKey=<your-account-key>;"
 ```
 
 ### ✅ Use managed identity
 
 ```bash
 # DO use managed identity
-cosmosdbshell --auth-method managed-identity
+cosmosdbshell --connect https://<account-name>.documents.azure.com:443/ --connect-managed-identity=<client-id>
 ```
 
 ### ❌ Leaving MCP open
