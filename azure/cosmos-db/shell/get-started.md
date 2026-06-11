@@ -33,27 +33,37 @@ CS >
 ## Connect to your account
 
 When launched without connection arguments, Azure Cosmos DB Shell starts in a disconnected state.
-Use the `connect` command to authenticate and connect to an account.
+Use the `connect` command to authenticate and connect to an account. The shell
+automatically selects the appropriate credential type based on the arguments you provide.
 
 **Use Microsoft Entra ID** (recommended):
 
 ```bash
-CS > connect https://<account-name>.documents.azure.com:443/ --auth-method entra-id
+CS > connect https://<account-name>.documents.azure.com:443/ --tenant=<tenant-id>
 ```
 
-This starts the browser sign-in flow.
+This starts the browser sign-in flow. You can optionally add `--hint=user@contoso.com` to pre-fill the login.
 
 **Use Managed Identity** (production):
 
 ```bash
-CS > connect https://<account-name>.documents.azure.com:443/ --auth-method managed-identity
+CS > connect https://<account-name>.documents.azure.com:443/ --managed-identity=<client-id>
+```
+
+For system-assigned managed identity, use the endpoint-only form — `DefaultAzureCredential` includes `ManagedIdentityCredential` in its chain automatically:
+
+```bash
+CS > connect https://<account-name>.documents.azure.com:443/
 ```
 
 **Use Account Key** (development/testing):
 
 ```bash
-CS > connect DefaultEndpointProtocol=https;AccountName=<account-name>;AccountKey=<account-key>; --auth-method key
+CS > connect "AccountEndpoint=https://<account-name>.documents.azure.com:443/;AccountKey=<account-key>;"
 ```
+
+> [!NOTE]
+> Quote the connection string. A connection string contains `;`, which the shell treats as a command separator.
 
 ## Basic navigation
 
