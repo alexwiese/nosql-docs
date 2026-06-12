@@ -22,7 +22,7 @@ ai-usage: ai-assisted
 [!INCLUDE[Preview](includes/notice-preview.md)]
 
 > [!IMPORTANT]
-> As Integrated Embeddings is gradually rolling out across Azure regions, availability may vary, and the feature might not yet be accessible in your subscription or region.
+> As Integrated Embeddings is gradually rolling out across Azure regions, availability may vary, and the feature might not yet be accessible in your region.
 
 ## What are Integrated Embeddings?
 
@@ -817,17 +817,20 @@ The following table lists scenarios you might encounter when using Integrated Em
 
 ## Pricing
 
-Integrated Embeddings is available at no additional cost. You pay only for the underlying services it uses:
+With Integrated Embeddings, you only pay for the underlying services it consumes. Embedding model inference is billed to your [Microsoft Foundry resource](https://azure.microsoft.com/pricing/details/ai-foundry-models/aoai/#pricing). Azure Cosmos DB charges request units for writing each generated embedding back to your item. Detecting changes to your items also consumes additional request units, and to do this reliably, Azure Cosmos DB retains the previous version of each changed item. As a result, replace and delete operations on the source container incur an extra RU charge that scales with document size, ranging from 50% to 100% on top of the [base write charge by item size](understand-request-unit-consumption#document-size).
 
-- **Microsoft Foundry**: Embedding model inference is billed to your [Microsoft Foundry resource](https://azure.microsoft.com/pricing/details/ai-foundry-models/aoai/#pricing).
-- **Azure Cosmos DB**: Request units are consumed when Azure Cosmos DB reads the change feed to detect item changes and writes generated embeddings back to your items.
+> [!IMPORTANT]
+> Currently, this behavior is governed by an account-wide configuration, so every replace and delete across every container in the account is subject to the additional charge. This might change in a future release.
 
-## Limitations
+## Supported SDKs and tools
 
-Integrated Embeddings is in preview, and the following limitations apply.
+The following table summarizes the current support for configuring and managing Integrated Embeddings across SDKs and tools.
 
-- Portal support: [Container vector policies](vector-search.md#container-vector-policies) can be managed in the Azure portal, but the `embeddingSource` configuration isn't supported there yet. Until support is added, use the SDK options shown in the [quickstart](#get-started-with-integrated-embeddings).
-- Tooling support: Refer to the [quickstart](#get-started-with-integrated-embeddings) for how to use the feature with the currently supported options, until broader support is available across the Azure Cosmos DB management SDKs, Azure CLI, Azure Resource Manager (ARM), and Bicep.
+| Option                         | Status              | Guidance                                                                                                                                                                                                                                             |
+| ------------------------------ | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Data plane SDK                 | Partially supported | Use the Python or JavaScript SDK to create a container with an `embeddingSource` policy and read or write items, as shown in the [quickstart](#get-started-with-integrated-embeddings). Support for other SDKs is coming soon.                       |
+| Management plane SDK           | Partially supported | Use the Python SDK to create a container with an `embeddingSource` policy through Azure Resource Manager, as shown in the [quickstart](#get-started-with-integrated-embeddings). This is an interim approach. Support for other SDKs is coming soon. |
+| Azure portal, Azure CLI, Bicep | Coming soon         | Use one of the SDK options instead.                                                                                                                                                                                                                  |
 
 ## Related content
 
