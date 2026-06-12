@@ -20,7 +20,7 @@ Use the extension's resource explorer to:
 
 ## Prerequisites
 
-- Visual Studio Code with the Azure Databases extension installed.
+- Visual Studio Code with the Azure Cosmos DB extension installed.
 - An Azure account with permission to view Azure Cosmos DB resources.
 - At least one Azure Cosmos DB account in your selected subscription.
 
