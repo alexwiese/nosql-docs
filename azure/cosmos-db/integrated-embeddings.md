@@ -815,13 +815,6 @@ The following table lists scenarios you might encounter when using Integrated Em
 | Embedding generation takes longer than expected.             | Azure Cosmos DB might be processing a backlog of item changes, or the Microsoft Foundry embedding model deployment might be hitting its rate limit. | Review write volume, Azure Cosmos DB throughput, item size, and the quota on the Microsoft Foundry embedding model deployment.                                                                  |
 | Embeddings are generated for some items but not others.      | Some items might be missing the configured source properties, or one or more of those properties might be empty or null.                            | Compare an item that received an embedding with one that didn't. Confirm that the missing item contains every property listed in `sourcePaths` and that those properties have non-empty values. |
 
-## Pricing
-
-With Integrated Embeddings, you only pay for the underlying services it consumes. Embedding model inference is billed to your [Microsoft Foundry resource](https://azure.microsoft.com/pricing/details/ai-foundry-models/aoai/#pricing). Azure Cosmos DB charges request units for writing each generated embedding back to your item. Detecting changes to your items also consumes additional request units, and to do this reliably, Azure Cosmos DB retains the previous version of each changed item. As a result, replace and delete operations on the source container incur an extra RU charge that scales with document size, ranging from 50% to 100% on top of the [base write charge by item size](understand-request-unit-consumption#document-size).
-
-> [!IMPORTANT]
-> Currently, this behavior is governed by an account-wide configuration, so every replace and delete across every container in the account is subject to the additional charge. This might change in a future release.
-
 ## Supported SDKs and tools
 
 The following table summarizes the current support for configuring and managing Integrated Embeddings across SDKs and tools.
@@ -831,6 +824,12 @@ The following table summarizes the current support for configuring and managing 
 | Data plane SDK                 | Partially supported | Use the Python or JavaScript SDK to create a container with an `embeddingSource` policy and read or write items, as shown in the [quickstart](#get-started-with-integrated-embeddings). Support for other SDKs is coming soon.                       |
 | Management plane SDK           | Partially supported | Use the Python SDK to create a container with an `embeddingSource` policy through Azure Resource Manager, as shown in the [quickstart](#get-started-with-integrated-embeddings). This is an interim approach. Support for other SDKs is coming soon. |
 | Azure portal, Azure CLI, Bicep | Coming soon         | Use one of the SDK options instead.                                                                                                                                                                                                                  |
+## Pricing
+
+With Integrated Embeddings, you only pay for the underlying services it consumes. Embedding model inference is billed to your [Microsoft Foundry resource](https://azure.microsoft.com/pricing/details/ai-foundry-models/aoai/#pricing). Azure Cosmos DB charges request units for writing each generated embedding back to your item. Detecting changes to your items also consumes additional request units, and to do this reliably, Azure Cosmos DB retains the previous version of each changed item. As a result, replace and delete operations on the source container incur an extra RU charge that scales with document size, ranging from 50% to 100% on top of the [base write charge by item size](understand-request-unit-consumption.md#document-size).
+
+> [!IMPORTANT]
+> Currently, this behavior is governed by an account-wide configuration, so every replace and delete across every container in the account is subject to the additional charge. This might change in a future release.
 
 ## Related content
 
