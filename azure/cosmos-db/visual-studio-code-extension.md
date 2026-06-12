@@ -30,7 +30,7 @@ appliesto:
 
 ## Install extension
 
-To connect and manage data in Azure Cosmos DB within Visual Studio, first install the **Azure Databases** extension.
+To connect and manage data in Azure Cosmos DB within Visual Studio Code, first install the **Azure Cosmos DB** extension.
 
 1. Open Visual Studio Code.
 1. Access the **Extensions** pane by selecting **View > Extensions**  or using the shortcut **Ctrl + Shift + X** on Windows and **Command + Shift + X** on macOS.
@@ -113,7 +113,7 @@ Within the query editor, view more query and index metrics to better help optimi
 
 ## Install extension
 
-To connect and manage data in Azure Cosmos DB, you need to install the **Azure Databases** extension for Visual Studio Code.
+To connect and manage data in Azure Cosmos DB, you need to install the **Azure Cosmos DB** extension for Visual Studio Code.
 
 1. Open Visual Studio Code.
 1. Access the **Extensions** pane by selecting **View > Extensions** or using the shortcut **Ctrl + Shift + X** on Windows and **Command + Shift + X** on macOS.
@@ -165,7 +165,7 @@ Easily manage your databases within Visual Studio Code:
         - **Edit**: Edit the content of selected documents.
         - **Delete**: Remove selected documents with changes reflected immediately.
 
-:::image type="content" source="media/visual-studio-code-extension/vcore-vs-code-screenshot.png" alt-text="Screenshot of VS-code extension of an MongoDB instance." lightbox="media/visual-studio-code-extension/vcore-vs-code-screenshot.png":::
+:::image type="content" source="media/visual-studio-code-extension/vcore-vs-code-screenshot.png" alt-text="Screenshot of VS-code extension of a MongoDB instance." lightbox="media/visual-studio-code-extension/vcore-vs-code-screenshot.png":::
 
 ## Powerful Query Tools
 
@@ -186,11 +186,11 @@ Explore your data using multiple views for different perspectives:
 
 - **JSON View**: See the raw JSON data structure.
 
-  :::image type="content" source="media/visual-studio-code-extension/vcore-vs-code-json-view.png" alt-text="Screenshot of VS-code extension of an MongoDB instance in JSON view." lightbox="media/visual-studio-code-extension/vcore-vs-code-json-view.png":::
+  :::image type="content" source="media/visual-studio-code-extension/vcore-vs-code-json-view.png" alt-text="Screenshot of VS-code extension of a MongoDB instance in JSON view." lightbox="media/visual-studio-code-extension/vcore-vs-code-json-view.png":::
 
 - **Tree View**: Navigate and explore nested data effortlessly.
 
-  :::image type="content" source="media/visual-studio-code-extension/vcore-vs-code-tree-view.png" alt-text="Screenshot of VS-code extension of an MongoDB instance in Tree view." lightbox="media/visual-studio-code-extension/vcore-vs-code-tree-view.png":::
+  :::image type="content" source="media/visual-studio-code-extension/vcore-vs-code-tree-view.png" alt-text="Screenshot of VS-code extension of a MongoDB instance in Tree view." lightbox="media/visual-studio-code-extension/vcore-vs-code-tree-view.png":::
 
 - **Table View**: Quickly scan data and drill down into nested documents.
 
@@ -198,7 +198,7 @@ Explore your data using multiple views for different perspectives:
 
     - **To go back**: Return to previous levels using the navigation breadcrumbs below the Table View.
 
-  :::image type="content" source="media/visual-studio-code-extension/vcore-vs-code-table-view.png" alt-text="Screenshot of VS-code extension of an MongoDB instance in Table view." lightbox="media/visual-studio-code-extension/vcore-vs-code-table-view.png":::
+  :::image type="content" source="media/visual-studio-code-extension/vcore-vs-code-table-view.png" alt-text="Screenshot of VS-code extension of a MongoDB instance in Table view." lightbox="media/visual-studio-code-extension/vcore-vs-code-table-view.png":::
 
 ## Mongo Shell Integration
 
