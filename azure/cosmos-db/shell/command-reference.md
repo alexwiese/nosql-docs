@@ -467,21 +467,46 @@ Switch to a different Cosmos DB account.
 
 **Syntax:**
 ```bash
-connect <connection_string|endpoint> [--auth-method <method>]
+connect <connection_string|endpoint> [--tenant=<tenant-id>] [--managed-identity=<client-id>] [--hint=<email>]
 ```
 
-**Auth Methods:**
-- `entra-id`: Microsoft Entra ID (default, recommended)
-- `managed-identity`: Managed Identity
-- `key`: Account key
+**Credential selection:**
+
+The credential type is determined automatically based on the arguments provided. The options `--tenant`, `--managed-identity`, and connection strings with `AccountKey` are mutually exclusive — provide only one. If multiple are specified, the shell uses the first match in this precedence order:
+
+1. Connection string with `AccountKey`: Account key
+1. `--managed-identity`: Managed Identity
+1. `--tenant`: Microsoft Entra ID (Interactive Browser)
+1. Endpoint only (no additional arguments): DefaultAzureCredential
 
 **Examples:**
 ```bash
-# Connect with Entra ID
-CS > connect https://myaccount.documents.azure.com:443/ --auth-method entra-id
+# Connect with Entra ID (interactive browser)
+CS > connect https://myaccount.documents.azure.com:443/ --tenant=<tenant-id>
 
-# Connect with account key
-CS > connect DefaultEndpointProtocol=https;AccountName=myaccount;... --auth-method key
+# Connect with account key (quote the connection string)
+CS > connect "AccountEndpoint=https://myaccount.documents.azure.com:443/;AccountKey=<key>;"
+```
+
+### CLI startup options
+
+All `connect` options are also available as CLI startup arguments with a `--connect-` prefix. Use these to authenticate when launching the shell from your terminal:
+
+**Syntax:**
+```bash
+cosmosdbshell --connect <endpoint> [--connect-tenant=<tenant-id>] [--connect-managed-identity=<client-id>] [--connect-subscription=<subscription-id>] [--connect-resource-group=<resource-group>]
+```
+
+**Examples:**
+```bash
+# Launch with Entra ID authentication
+cosmosdbshell --connect https://myaccount.documents.azure.com:443/ --connect-tenant=<tenant-id>
+
+# Launch with managed identity
+cosmosdbshell --connect https://myaccount.documents.azure.com:443/ --connect-managed-identity=<client-id>
+
+# Launch with explicit ARM context
+cosmosdbshell --connect https://myaccount.documents.azure.com:443/ --connect-tenant=<tenant-id> --connect-subscription=<subscription-id> --connect-resource-group=<resource-group>
 ```
 
 ## Best practices
