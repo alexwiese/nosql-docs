@@ -1,5 +1,7 @@
 name: Copilot Setup Steps
 on:
+  schedule:
+    - cron: '0 13 * * 3'
   workflow_dispatch:
   push:
     paths:
@@ -13,14 +15,11 @@ jobs:
     permissions:
       contents: read
     steps:
-      # Checkout source code
       - name: Checkout code
         uses: actions/checkout@v6
-      # Setup Node LTS
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: lts/*
-      # Install the Azure Cosmos DB agent skills from https://github.com/azurecosmosdb/cosmosdb-agent-kit
       - name: Install Cosmos DB agent skills
         run: npx skills add AzureCosmosDB/cosmosdb-agent-kit
