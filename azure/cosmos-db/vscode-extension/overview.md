@@ -40,7 +40,7 @@ The Azure Cosmos DB extension for Visual Studio Code is a versatile tool that yo
 
 1. Open Visual Studio Code.
 1. Select **View** > **Extensions** or use the shortcut `Ctrl+Shift+X` on Windows (`Cmd+Shift+X` on macOS).
-1. In the search bar, enter **Azure Databases** and select the [Azure Databases extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb).
+1. In the search bar, enter **Azure Cosmos DB** and select the [Azure Cosmos DB extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb).
 1. Select **Install**.
 1. Reload Visual Studio Code if prompted.
 

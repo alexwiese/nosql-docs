@@ -6,7 +6,7 @@ ms.author: sasinnat
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.topic: feature-guide
-ms.date: 11/03/2025
+ms.date: 06/12/2026
 ms.update-cycle: 180-days
 ms.custom: sfi-image-nochange
 ms.collection:
@@ -18,21 +18,23 @@ appliesto:
 
 # Azure Cosmos DB for NoSQL best practices in GitHub Copilot for Visual Studio Code
 
-[GitHub Copilot](https://github.com/features/copilot) in Visual Studio Code provides intelligent code suggestions, but those suggestions become even more powerful when they understand your specific database context. The [Azure Cosmos DB for Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb) now automatically provides GitHub Copilot with Azure Cosmos DB-specific best practices and recommendations, enabling context-aware AI assistance for your database development.
+[GitHub Copilot](https://github.com/features/copilot) in Visual Studio Code provides intelligent code suggestions, but those suggestions become even more powerful when they understand your specific database context. The [Azure Cosmos DB for Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb) automatically installs the [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md), enabling context-aware AI assistance for your database development.
 
-When you connect to your Azure Cosmos DB account through the Visual Studio Code extension, it automatically creates an `azurecosmosdb.instructions.md` file in your user profile folder. This file acts as a context provider for GitHub Copilot, ensuring the AI understands your Azure Cosmos DB setup and can provide optimized suggestions for partitioning, performance tuning, diagnostics, and more.
+When you connect to your Azure Cosmos DB account through the Visual Studio Code extension, it automatically installs the Agent Kit, which provides GitHub Copilot with expert-level Azure Cosmos DB best practices across data modeling, partition key design, query optimization, SDK usage, and more.
 
 ## Why context-aware AI matters
 
 AI coding assistants like GitHub Copilot are only as effective as the context they have. Without understanding how your application interacts with Azure Cosmos DB—such as partitioning strategies, indexing patterns, or query design—Copilot might generate suggestions that aren't optimized for your database setup.
 
-With the `azurecosmosdb.instructions.md` file automatically deployed, Copilot gains immediate access to:
+With the Agent Kit automatically installed, Copilot gains immediate access to:
 
-- **Azure Cosmos DB best practices** for partition key design and throughput management
-- **Performance optimization tips** for multi-partition queries and indexing
-- **Diagnostic logging recommendations** for troubleshooting latency or errors
-- **Cost-efficient setup guidance** for various scenarios including vector search
-- **SDK usage patterns** and error handling strategies
+- **Data modeling** best practices for structuring documents and relationships
+- **Partition key design** guidelines for choosing effective partition keys
+- **Query optimization** techniques to reduce RU consumption and improve performance
+- **SDK best practices** for proper client initialization, retry logic, and error handling
+- **Vector search and full-text search** patterns for AI-powered applications
+- **Indexing strategies** for efficient index policies
+- **Throughput and scaling** guidance for autoscale and capacity planning
 
 ## Prerequisites
 
@@ -50,7 +52,7 @@ First, ensure you have both the Azure Cosmos DB extension and GitHub Copilot ext
 1. Open Visual Studio Code
 2. Go to the **Extensions** view by selecting **View > Extensions** or pressing **Ctrl+Shift+X** (Windows/Linux) or **Cmd+Shift+X** (macOS)
 3. Search for "Azure Cosmos DB" or use the extension ID: `ms-azuretools.vscode-cosmosdb`
-4. Select **Install** on the **Azure Databases** extension by Microsoft
+4. Select **Install** on the **Azure Cosmos DB** extension by Microsoft
 5. Reload Visual Studio Code if prompted
 
 ### Install GitHub Copilot
@@ -75,26 +77,18 @@ Connect your Azure Cosmos DB account to enable the context-aware features:
 > [!NOTE]
 > If you're in a corporate environment with network restrictions, you might need to configure firewall rules to allow your IP address. Consider initially allowing all IP addresses (0.0.0.0 - 255.255.255.255) for testing, then refining the allowlist for production use.
 
-## Step 3: Verify context file deployment
+## Step 3: Verify Agent Kit installation
 
-Once connected, the extension automatically creates the `azurecosmosdb.instructions.md` file in your user profile folder:
+Once connected, the extension automatically installs the Azure Cosmos DB Agent Kit. To verify the installation:
 
-**Windows location:**
-```
-%APPDATA%\Code\User\prompts\azurecosmosdb.instructions.md
-```
+1. Open a terminal in Visual Studio Code
+1. Check that the `.agent-skills` folder exists in your workspace with the Azure Cosmos DB rules
+1. Alternatively, verify that GitHub Copilot provides Azure Cosmos DB-specific suggestions when you start writing database code
 
-**macOS location:**
-```
-~/Library/Application Support/Code/User/prompts/azurecosmosdb.instructions.md
-```
+> [!NOTE]
+> The `.agent-skills` folder is generated locally and isn't intended to be committed to source control. Add `.agent-skills/` to your `.gitignore` file so each contributor's environment manages its own copy.
 
-**Linux location:**
-```
-~/.config/Code/User/prompts/azurecosmosdb.instructions.md
-```
-
-This file is automatically deployed to your user profile, making it available across all your Visual Studio Code workspaces without requiring duplication in each project.
+The Agent Kit provides a curated set of rules organized into prioritized categories that cover real-world Azure Cosmos DB scenarios. For the current rule inventory and what's included, see [Azure Cosmos DB Agent Kit for AI coding assistants](gen-ai/agent-kit.md).
 
 ## Step 4: Experience context-aware suggestions
 
@@ -175,42 +169,14 @@ This integration transforms the Azure Cosmos DB extension into more than just a 
 
 ## Customizing the guidance
 
-The `azurecosmosdb.instructions.md` file is open and extensible. You can:
+The Agent Kit is open-source and extensible. You can:
 
-1. **Review the file** to understand what context is being provided to Copilot
-2. **Add project-specific guidance** for your team's coding standards
-3. **Contribute improvements** by submitting pull requests to the [GitHub repository](https://github.com/microsoft/vscode-cosmosdb)
-4. **Report issues or suggestions** in the [issues section](https://github.com/microsoft/vscode-cosmosdb/issues)
+1. **Review the rules** to understand what context is being provided to Copilot
+1. **Add project-specific rules** for your team's coding standards
+1. **Contribute improvements** by submitting pull requests to the [Agent Kit GitHub repository](https://github.com/AzureCosmosDB/cosmosdb-agent-kit)
+1. **Report issues or suggestions** in the [issues section](https://github.com/AzureCosmosDB/cosmosdb-agent-kit/issues)
 
-## Alternative: Azure Cosmos DB Agent Kit
-
-For more comprehensive coverage, consider using the [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md) as an alternative or supplement to the instructions file. The Agent Kit provides:
-
-- **45+ curated rules** across eight categories (data modeling, partition keys, queries, SDKs, indexing, throughput, global distribution, and monitoring)
-- **Priority-based guidance** with rules ranked by real-world impact
-- **Broader compatibility** with GitHub Copilot, Claude Code, Gemini CLI, and other Agent Skills-compatible tools
-- **Community contributions** for continuously updated best practices
-
-Install the Agent Kit with a single command:
-
-```bash
-npx add-skill AzureCosmosDB/cosmosdb-agent-kit
-```
-### Disabling the instructions file
-
-If you prefer to use only the Agent Kit or want to disable the automatic instructions file:
-
-1. Navigate to your user profile folder:
-   - **Windows**: `%APPDATA%\Code\User\prompts\`
-   - **macOS**: `~/Library/Application Support/Code/User/prompts/`
-   - **Linux**: `~/.config/Code/User/prompts/`
-
-2. Delete or rename the `azurecosmosdb.instructions.md` file
-
-3. Optionally, create an empty file with the same name to prevent the extension from recreating it
-
-> [!NOTE]
-> The extension may recreate the instructions file when you reconnect to your Azure Cosmos DB account. To permanently disable it, you can create a backup of your preferred configuration or use the Agent Kit exclusively.
+For full documentation on Agent Kit capabilities and manual installation, see [Azure Cosmos DB Agent Kit for AI coding assistants](gen-ai/agent-kit.md).
 
 ## Best practices for maximum benefit
 
@@ -260,16 +226,16 @@ Use the extension's built-in features alongside Copilot for a complete developme
 
 ### Copilot not providing Azure Cosmos DB-specific suggestions
 
-1. **Verify file deployment**: Check that `azurecosmosdb.instructions.md` exists in your user profile folder
-2. **Restart Visual Studio Code**: Sometimes a restart is needed for changes to take effect
-3. **Check GitHub Copilot status**: Ensure Copilot is active and properly authenticated
-4. **Reconnect to Azure Cosmos DB**: Try disconnecting and reconnecting your account
+1. **Verify Agent Kit installation**: Check that the `.agent-skills` folder exists in your workspace with Azure Cosmos DB rules
+1. **Restart Visual Studio Code**: Sometimes a restart is needed for changes to take effect
+1. **Check GitHub Copilot status**: Ensure Copilot is active and properly authenticated
+1. **Reconnect to Azure Cosmos DB**: Try disconnecting and reconnecting your account
 
-### Extension not deploying the instructions file
+### Agent Kit not installed automatically
 
 1. **Update the extension**: Ensure you have the latest version of the Azure Cosmos DB extension
-2. **Check permissions**: Verify Visual Studio Code has write permissions to the user profile folder
-3. **Manual connection**: Try manually connecting to your Azure Cosmos DB account through the extension
+1. **Check permissions**: Verify Visual Studio Code has write permissions to the workspace folder
+1. **Manual installation**: Run `npx add-skill AzureCosmosDB/cosmosdb-agent-kit` in your project directory
 
 ## Related content
 
