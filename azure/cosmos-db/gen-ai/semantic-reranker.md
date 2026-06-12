@@ -52,7 +52,7 @@ When you call Semantic Reranker, the response can contain multiple fields, inclu
 ## Set up Semantic Reranker 
 
 > [!IMPORTANT]
->  Semantic Reranker is in preview. You might need to run `az provider register -n Microsoft.InferenceService` by using the [Azure CLI](https://learn.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) before enabling Semantic Reranker in the Azure portal.
+>  Semantic Reranker is in preview. You might need to run `az provider register -n Microsoft.InferenceService` by using the [Azure CLI](/cli/azure/get-started-with-azure-cli) before enabling Semantic Reranker in the Azure portal.
 
 Use the Azure portal to enable, disable, and configure Semantic Reranker for a specific Azure Cosmos DB resource.
 
