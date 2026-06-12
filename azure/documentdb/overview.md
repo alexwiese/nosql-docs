@@ -4,8 +4,10 @@ description: Learn about Azure DocumentDB (with MongoDB compatibility), what it 
 author: seesharprun
 ms.author: sidandrews
 ms.topic: overview
-ms.date: 01/07/2026
+ms.date: 06/08/2026
 ms.update-cycle: 180-days
+ms.collection:
+  - ce-skilling-ai-copilot
 ai-usage: ai-generated
 ---
 
