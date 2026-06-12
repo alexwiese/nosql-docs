@@ -17,7 +17,7 @@ The extension can connect to a local emulator for offline or preproduction devel
 ## Prerequisites
 
 - Azure Cosmos DB Emulator installed and running.
-- Visual Studio Code with the Azure Databases extension.
+- Visual Studio Code with the Azure Cosmos DB extension.
 
 ## Connect to the emulator
 

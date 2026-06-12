@@ -18,14 +18,19 @@ ms.update-cycle: 180-days
 
 This preview capability helps you convert plain-language prompts into Azure Cosmos DB SQL queries.
 
+> [!IMPORTANT]
+> This capability is currently available in preview. After installing the VS Code extension, switch to the **Pre-Release Version** by selecting **"Switch to Pre-Release Version"** in VS Code.
+>
+> :::image type="content" source="media/prerelease-version/prerelease-version.png" alt-text="Screenshot showing the Switch to Pre-Release Version option in Visual Studio Code for the Azure Cosmos DB extension.":::
+
 ## Prerequisites
 
 - Visual Studio Code 1.103 or later.
-- Azure Databases extension with preview features enabled.
+- [Azure Cosmos DB extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb) (Pre-Release version).
 - GitHub Copilot and GitHub Copilot Chat available in Visual Studio Code.
 - Access to an Azure Cosmos DB for NoSQL account, or a local emulator setup.
 
-For private preview setup and validation assets, see the preview repository: [cosmosdb-vscode-ai-assistant-preview](https://github.com/AzureCosmosDB/cosmosdb-vscode-ai-assistant-preview).
+For preview setup and validation assets, see the preview repository: [cosmosdb-vscode-ai-assistant-preview](https://github.com/AzureCosmosDB/cosmosdb-vscode-ai-assistant-preview).
 
 ## Generate a query from natural language
 

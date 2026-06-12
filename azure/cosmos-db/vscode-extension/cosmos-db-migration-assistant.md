@@ -17,6 +17,11 @@ ms.custom: preview
 
 Azure Cosmos DB Migration Assistant simplifies and accelerates RDBMS-to-Azure Cosmos DB migrations with an AI-driven, guided workflow and built-in best-practice skills. It replaces manual analysis with structured recommendations and helps you navigate key design choices such as denormalization, partitioning, and NoSQL data modeling patterns. Available in the Azure Cosmos DB extension for Visual Studio Code, it guides you through an AI-assisted migration from relational databases (for example, Oracle, Db2, SQL Server, PostgreSQL, or MySQL) to Azure Cosmos DB for NoSQL.
 
+> [!IMPORTANT]
+> This capability is currently available in preview. After installing the VS Code extension, switch to the **Pre-Release Version** by selecting **"Switch to Pre-Release Version"** in VS Code.
+>
+> :::image type="content" source="media/prerelease-version/prerelease-version.png" alt-text="Screenshot showing the Switch to Pre-Release Version option in Visual Studio Code for the Azure Cosmos DB extension.":::
+
 Relational databases work well for normalized, transactional workloads, but modern applications often require flexible schemas, elastic scale, and global distribution. Azure Cosmos DB is a managed, globally distributed NoSQL database with JSON data models, horizontal scaling, low latency, tunable consistency, RU-based throughput, automatic indexing, and built-in vector search to support AI-driven similarity queries. Manually modernizing a relational application to NoSQL is difficult and time-consuming, requiring high-impact choices—such as denormalization, partition key selection, and data modeling patterns—that demand deep knowledge of both RDBMS and NoSQL technologies.
 
 Migration Assistant in Visual Studio Code provides a guided, phase-based workflow that assesses your schema, application code, and access patterns; generates a Cosmos DB container design (including partition key and indexing recommendations); provisions the target database and containers; loads sample data; and helps refactor application code—all within a single, end-to-end flow. Migration artifacts are written to the `.cosmosdb-migration/` folder in your workspace so you can pause, resume, inspect outputs, commit them to source control, or rerun steps as needed.
@@ -24,7 +29,7 @@ Migration Assistant in Visual Studio Code provides a guided, phase-based workflo
 ## Prerequisites
 
 - Visual Studio Code installed
-- [Azure Cosmos DB extension](https://devblogs.microsoft.com/cosmosdb/azure-cosmos-db-extension-for-vs-code-now-generally-available/) installed (extension ID: *ms-azuretools.vscode-cosmosdb*)
+- [Azure Cosmos DB extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb) (Pre-Release version)
 - GitHub Copilot available in Visual Studio Code
 - A workspace containing the application you want to migrate
 - Database schema files
