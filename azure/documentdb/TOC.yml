@@ -5,6 +5,14 @@
   items:
     - name: Overview of Azure DocumentDB
       href: overview.md
+    - name: Compatibility
+      items:
+        - name: Managed service compatibility
+          href: managed-service-compatibility.md
+        - name: MongoDB feature compatibility
+          href: compatibility-features.md
+        - name: MongoDB query language compatibility
+          href: compatibility-query-language.md
     - name: FAQ
       href: faq.yml
     - name: Compare to MongoDB Atlas
@@ -16,7 +24,6 @@
     - name: First-party MongoDB service
       href: azure-mongo-first-party.md
 - name: Get started
-  expanded: true
   items:
     - name: Create a cluster
       items:
@@ -139,34 +146,6 @@
               href: /semantic-kernel/concepts/vector-store-connectors/out-of-the-box-connectors/azure-cosmosdb-mongodb-connector
 - name: Develop
   items:
-    - name: Connect to the cluster
-      items:
-        - name: Connect using Visual Studio Code
-          href: how-to-connect-visual-studio-code-extension.md
-        - name: Connect using Studio 3T
-          href: how-to-connect-studio-3t.md
-        - name: Connect using MongoDB Shell
-          href: how-to-connect-mongo-shell.md
-        - name: Connect using Azure Cloud Shell
-          href: how-to-connect-cloud-shell.md
-        - name: Connect using Spark connector from Azure Databricks
-          href: how-to-connect-from-databricks.md
-    - name: Compatibility
-      items:
-        - name: Managed service compatibility
-          href: managed-service-compatibility.md
-        - name: MongoDB feature compatibility
-          href: compatibility-features.md
-        - name: MongoDB query language compatibility
-          href: compatibility-query-language.md
-    - name: Core capabilities
-      items:
-        - name: Change streams
-          href: change-streams.md
-        - name: Data API
-          href: data-api.md
-        - name: Service limitations
-          href: limitations.md
     - name: Build a console application
       items:
         - name: .NET
@@ -181,10 +160,30 @@
           href: how-to-build-go-console-app.md
         - name: Rust
           href: how-to-build-rust-console-app.md
-    - name: Transactions
+    - name: Connect to the cluster
       items:
-        - name: Create transactions
-          href: how-to-transactions.md
+        - name: Connect using Visual Studio Code
+          href: how-to-connect-visual-studio-code-extension.md
+        - name: Connect using Studio 3T
+          href: how-to-connect-studio-3t.md
+        - name: Connect using MongoDB Shell
+          href: how-to-connect-mongo-shell.md
+        - name: Connect using Azure Cloud Shell
+          href: how-to-connect-cloud-shell.md
+        - name: Connect using Spark connector from Azure Databricks
+          href: how-to-connect-from-databricks.md
+    - name: Core capabilities
+      items:
+        - name: Change streams
+          href: change-streams.md
+        - name: Data API
+          href: data-api.md
+        - name: Service limitations
+          href: limitations.md
+    - name: Commands
+      href: commands/TOC.yml
+    - name: Operators
+      href: operators/TOC.yml
     - name: Query and indexing
       items:
         - name: Indexing overview
@@ -205,10 +204,10 @@
           href: index-advisor.md
         - name: Geospatial queries
           href: geospatial-support.md
-        - name: Commands
-          href: commands/TOC.yml
-        - name: Operators
-          href: operators/TOC.yml
+    - name: Transactions
+      items:
+        - name: Create transactions
+          href: how-to-transactions.md
 - name: Security
   items:
     - name: Security overview
