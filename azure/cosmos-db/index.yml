@@ -9,7 +9,9 @@ metadata:
   ms.author: sidandrews
   ms.service: azure-cosmos-db
   ms.topic: hub-page
-  ms.date: 12/17/2025
+  ms.date: 06/08/2026
+  ms.collection:
+    - ce-skilling-ai-copilot
   ai-usage: ai-generated
   appliesto:
     - ✅ NoSQL
