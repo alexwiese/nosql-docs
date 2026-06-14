@@ -71,7 +71,7 @@ sections:
           The connection string is:
 
           ```
-          DefaultEndpointsProtocol=https;AccountName=<AccountNamefromCosmosDB;AccountKey=<FromKeysPaneofCosmosDB>;TableEndpoint=https://<AccountName>.table.cosmosdb.azure.com
+          DefaultEndpointsProtocol=https;AccountName=example-storage-account;AccountKey=Gg7Hh~8Ii9.-Jj0Kk1Ll2Mm3Nn4Oo5_Pp6Qq7Rr8;TableEndpoint=https://example-storage-account.table.cosmosdb.azure.com
           ```
 
           You can get the connection string from the Connection String page in the Azure portal.

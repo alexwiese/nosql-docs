@@ -367,7 +367,7 @@ Now you can list containers set to Private and Blob access levels for that stora
 
 
 ## Examples
-The examples used make use of sample Azure storage account `(pgquickstart)` with custom files uploaded for adding to coverage of different use cases. We can start by creating table used across the set of example used.
+The examples used make use of sample Azure storage account `(example-storage-account)` with custom files uploaded for adding to coverage of different use cases. We can start by creating table used across the set of example used.
 ```sql
 CREATE TABLE IF NOT EXISTS public.events
         (
@@ -387,7 +387,7 @@ CREATE TABLE IF NOT EXISTS public.events
 The example illustrates adding of access key for the storage account to get access for querying from a session on the Azure Cosmos DB for Postgres cluster.
 
 ```sql
-SELECT azure_storage.account_add('pgquickstart', 'SECRET_ACCESS_KEY');
+SELECT azure_storage.account_add('example-storage-account', 'Gg7Hh~8Ii9.-Jj0Kk1Ll2Mm3Nn4Oo5_Pp6Qq7Rr8');
 ```
 > [!TIP]
 > In your storage account, open **Access keys**. Copy the **Storage account name** and copy the **Key** from **key1** section (you have to select **Show** next to the key first).
@@ -398,13 +398,13 @@ SELECT azure_storage.account_add('pgquickstart', 'SECRET_ACCESS_KEY');
 The example illustrates removing the access key for a storage account. This action would result in removing access to files hosted in private bucket in container.
 
 ```sql
-SELECT azure_storage.account_remove('pgquickstart');
+SELECT azure_storage.account_remove('example-storage-account');
 ```
 
 ### Adding access for a role to Azure Blob storage
 
 ```sql
-SELECT * FROM azure_storage.account_user_add('pgquickstart', 'support');
+SELECT * FROM azure_storage.account_user_add('example-storage-account', 'support');
 ```
 
 ### List all the roles with access on Azure Blob storage
@@ -416,19 +416,19 @@ SELECT * FROM azure_storage.account_list();
 ### Removing the roles with access on Azure Blob storage
 
 ```sql
-SELECT * FROM azure_storage.account_user_remove('pgquickstart', 'support');
+SELECT * FROM azure_storage.account_user_remove('example-storage-account', 'support');
 ```
 
 ### List the objects within a `public` container
 
 ```sql
-SELECT * FROM azure_storage.blob_list('pgquickstart','publiccontainer');
+SELECT * FROM azure_storage.blob_list('example-storage-account','publiccontainer');
 ```
 
 ### List the objects within a `private` container
 
 ```sql
-SELECT * FROM azure_storage.blob_list('pgquickstart','privatecontainer');
+SELECT * FROM azure_storage.blob_list('example-storage-account','privatecontainer');
 ```
 
 > [!Note]
@@ -437,12 +437,12 @@ SELECT * FROM azure_storage.blob_list('pgquickstart','privatecontainer');
 ### List the objects with specific string initials within public container
 
 ```sql
-SELECT * FROM azure_storage.blob_list('pgquickstart','publiccontainer','e');
+SELECT * FROM azure_storage.blob_list('example-storage-account','publiccontainer','e');
 ```
 Alternatively
 
 ```sql
-SELECT * FROM azure_storage.blob_list('pgquickstart','publiccontainer') WHERE path LIKE 'e%';
+SELECT * FROM azure_storage.blob_list('example-storage-account','publiccontainer') WHERE path LIKE 'e%';
 ```
 
 ### Read content from an object in a container
@@ -450,7 +450,7 @@ The `blob_get` function retrieves a file from blob storage. In order for blob_ge
 
 ```sql
 SELECT * FROM azure_storage.blob_get
-        ('pgquickstart'
+        ('example-storage-account'
         ,'publiccontainer'
         ,'events.csv.gz'
         , NULL::events)
@@ -460,7 +460,7 @@ LIMIT 5;
 Alternatively, we can explicitly define the columns in the `FROM` clause.
 
 ```sql
-SELECT * FROM azure_storage.blob_get('pgquickstart','publiccontainer','events.csv')
+SELECT * FROM azure_storage.blob_get('example-storage-account','publiccontainer','events.csv')
 AS res (
          event_id BIGINT
         ,event_type TEXT
@@ -479,7 +479,7 @@ The example illustrates the use of `decoder` option. Normally format is inferred
 
 ```sql
 SELECT * FROM azure_storage.blob_get
-        ('pgquickstart'
+        ('example-storage-account'
         ,'publiccontainer'
         ,'events'
         , NULL::events
@@ -492,7 +492,7 @@ The example shows how to enforce using the gzip compression on a gzip compressed
 
 ```sql
 SELECT * FROM azure_storage.blob_get
-        ('pgquickstart'
+        ('example-storage-account'
         ,'publiccontainer'
         ,'events-compressed'
         , NULL::events
@@ -506,7 +506,7 @@ The example illustrates the possibility to filter & modify the content being imp
 
 ```sql
 SELECT concat('P-',event_id::text) FROM azure_storage.blob_get
-        ('pgquickstart'
+        ('example-storage-account'
         ,'publiccontainer'
         ,'events.csv'
         , NULL::events)
@@ -519,7 +519,7 @@ You can use custom separators and escape characters by passing the result of `az
 
 ```sql
 SELECT * FROM azure_storage.blob_get
-        ('pgquickstart'
+        ('example-storage-account'
         ,'publiccontainer'
         ,'events_pipe.csv'
         ,NULL::events
@@ -532,7 +532,7 @@ This way you can query data without importing it.
 
 ```sql
 SELECT event_type,COUNT(1) FROM azure_storage.blob_get
-        ('pgquickstart'
+        ('example-storage-account'
         ,'publiccontainer'
         ,'events.csv'
         , NULL::events)
