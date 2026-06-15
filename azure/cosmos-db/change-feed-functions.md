@@ -20,6 +20,15 @@ Azure Functions provides the simplest way to connect to the [change feed](change
 
 With the [Azure Functions trigger for Azure Cosmos DB](/azure/azure-functions/functions-bindings-cosmosdb-v2-trigger), you can use the [change feed processor's](change-feed-processor.md) scaling and reliable event detection functionality without the need to maintain any [worker infrastructure](change-feed-processor.md). Just focus on your Azure Function's logic without worrying about the rest of the event-sourcing pipeline. You can even mix the trigger with any other [Azure Functions bindings](/azure/azure-functions/functions-triggers-bindings#supported-bindings).
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 > [!NOTE]
 > The Azure Functions trigger uses [latest version change feed mode](change-feed-modes.md#latest-version-change-feed-mode). Currently, the Azure Functions trigger for Azure Cosmos DB is supported for use with the API for NoSQL only.
 

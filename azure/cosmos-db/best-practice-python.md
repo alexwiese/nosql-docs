@@ -38,6 +38,15 @@ For more information on how to add multiple regions using the Python SDK, see th
 
 ## SDK usage
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ### SDK usage parameters
 
 | Parameter | Default or constraint | When to use |

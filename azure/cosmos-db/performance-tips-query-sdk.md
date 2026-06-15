@@ -21,6 +21,15 @@ Azure Cosmos DB is a fast, flexible distributed database that scales seamlessly 
 
 ::: zone pivot="programming-language-csharp"
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Reduce query plan calls
 
 To execute a query, a query plan needs to be built. Network requests to the Azure Cosmos DB Gateway add to the latency of the query operation. There are two ways to remove this request and reduce the latency of the query operation:

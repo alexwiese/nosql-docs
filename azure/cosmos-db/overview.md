@@ -36,6 +36,15 @@ If you're comparing Azure database services to find the right fit for your workl
 
 ## ...for free
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 Azure Cosmos DB is a fully managed NoSQL and vector database. It offers single-digit millisecond response times, automatic and instant scalability, along with guaranteed speed at any scale. Business continuity is assured with [SLA-backed](https://azure.microsoft.com/support/legal/sla/cosmos-db) availability and enterprise-grade security.
 
 App development is faster and more productive thanks to:

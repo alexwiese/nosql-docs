@@ -53,6 +53,15 @@ Find the sample code with resource provisioning on [GitHub](https://github.com/A
 - [Java 21+](/java/openjdk/download)
 - [Maven 3.8+](https://maven.apache.org/download.cgi)
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Create data file with vectors
 
 1. Create a new data directory for the hotels data file:

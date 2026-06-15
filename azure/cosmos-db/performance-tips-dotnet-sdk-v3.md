@@ -29,6 +29,15 @@ Because Azure Cosmos DB is accessed via network calls, you can make client-side 
 
 If you're trying to improve your database performance, consider the options presented in the following sections.
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Hosting recommendations
 
 **Turn on server-side garbage collection**

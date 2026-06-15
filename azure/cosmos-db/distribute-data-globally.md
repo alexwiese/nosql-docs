@@ -40,6 +40,15 @@ With Azure Cosmos DB, you can add or remove the regions associated with your acc
 
 :::image type="content" source="./media/distribute-data-globally/deployment-topology.png" alt-text="Diagram that shows the highly available deployment topology." lightbox="./media/distribute-data-globally/deployment-topology.png":::
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Key benefits of global distribution
 
 **Build global active-active apps.** With its novel multi-region writes replication protocol, every region supports both writes and reads. The multi-region writes capability also enables:

@@ -29,6 +29,15 @@ The instructions in this article also help you to migrate the following external
 * .NET change feed processor library 2.0
 * .NET bulk executor library 1.1 or greater
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## What's new in the .NET V3 SDK
 
 The v3 SDK contains many usability and performance improvements, including:

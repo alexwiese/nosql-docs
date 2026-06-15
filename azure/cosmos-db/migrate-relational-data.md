@@ -20,6 +20,15 @@ In order to migrate from a relational database to Azure Cosmos DB for NoSQL, it 
 
 One common transformation is denormalizing data by embedding related subitems within one JSON document. Here we look at a few options for this using Azure Data Factory or Azure Databricks. For more information on data modeling for Azure Cosmos DB, see [data modeling in Azure Cosmos DB](modeling-data.md).  
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Example Scenario
 
 Assume we have the following two tables in our SQL database, Orders and OrderDetails.

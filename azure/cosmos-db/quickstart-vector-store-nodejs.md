@@ -58,6 +58,15 @@ Find the sample code with resource provisioning on [GitHub](https://github.com/A
     npm install -g typescript
     ```
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Create data file with vectors
 
 1. Create a new data directory for the hotels data file:

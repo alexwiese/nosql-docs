@@ -46,6 +46,15 @@ The type of Azure Cosmos DB account you're using determines the way consumed RUs
 
 1. **Autoscale mode**: In this mode, you can automatically and instantly scale the throughput (RU/s) of your database or container based on its usage. This scaling operation doesn't affect the availability, latency, throughput, or performance of the workload. This mode is well suited for mission-critical workloads that have variable or unpredictable traffic patterns, and require service level agreements (SLAs) on high performance and scale. To learn more, see the [autoscale throughput](provision-throughput-autoscale.md) article.
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Request Unit considerations
 
 While you estimate the number of RUs consumed by your workload, consider the following factors:

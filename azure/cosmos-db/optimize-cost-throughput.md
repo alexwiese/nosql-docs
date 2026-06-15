@@ -24,6 +24,15 @@ You can start with a minimum throughput of 400 RU/sec and scale up to tens of mi
 
 You can provision throughput on databases or containers and each strategy can help you save on costs depending on the scenario.
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Optimize by provisioning throughput at different levels
 
 * If you provision throughput on a database, all the containers, for example collections/tables/graphs within that database can share the throughput based on the load. Throughput reserved at the database level is shared unevenly, depending on the workload on a specific set of containers.

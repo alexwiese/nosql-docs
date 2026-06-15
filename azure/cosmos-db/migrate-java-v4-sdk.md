@@ -29,6 +29,15 @@ Update to the latest Azure Cosmos DB Java SDK to get the best of what Azure Cosm
 * Async Java SDK 2.x.x
 * Java SDK 3.x.x
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Azure Cosmos DB Java SDK’s and package mappings
 
 The following table lists different Azure Cosmos DB Java SDKs, the package name, and the release information:

@@ -78,6 +78,15 @@ So if you're asking "How can I improve my database performance?" consider the fo
 
 ## SDK Usage
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 * **Install the most recent SDK**
 
   The Azure Cosmos DB SDKs are constantly being improved to provide the best performance. See the Azure Cosmos DB Async Java SDK v2 [Release Notes](sdk-java-async-v2.md) pages to determine the most recent SDK and review improvements.
