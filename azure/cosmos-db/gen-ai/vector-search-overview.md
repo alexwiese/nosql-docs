@@ -19,6 +19,15 @@ appliesto:
 
 Vector search is a method that helps you find similar items based on their data characteristics rather than by exact matches on a property field. This technique is useful in applications such as searching for similar text, finding related images, making recommendations, or even detecting anomalies. It works by taking the [vector embeddings](vector-embeddings.md) of your data and query, and then measuring the [distance](distance-functions.md) between the data vectors and your query vector. The data vectors that are closest to your query vector are the ones that are found to be most similar semantically.
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](agent-kit.md).
+
 ## Examples
 
 This [interactive visualization](https://openai.com/index/introducing-text-and-code-embeddings/#text-similarity-models) shows some examples of closeness and distance between vectors.

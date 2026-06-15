@@ -36,6 +36,15 @@ The app uses a sample hotel dataset in a JSON file with calculated vectors from 
 - [Visual Studio Code](https://code.visualstudio.com/download)
   - [Azure Cosmos DB extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## App dependencies
 
 The app uses the following NuGet packages:

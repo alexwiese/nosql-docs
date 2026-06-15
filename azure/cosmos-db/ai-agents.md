@@ -22,6 +22,15 @@ AI agents are designed to perform specific tasks, answer questions, and automate
 
 This article provides conceptual overviews and detailed implementation samples for AI agents.
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## What are AI agents?
 
 Unlike standalone large language models (LLMs) or rule-based software/hardware systems, AI agents have these common features:

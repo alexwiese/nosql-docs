@@ -22,6 +22,15 @@ This guide includes best practices for solutions built using the latest version 
 
 ## SDK usage
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 - Always using the [latest version](sdk-nodejs.md) of the Azure Cosmos DB SDK available for optimal performance.
 - Use a [single instance](/javascript/api/@azure/cosmos/cosmosclient?view=azure-node-latest&preserve-view=true) of `CosmosClient` for the lifetime of your application for better performance.
 - Set the [preferredRegions](/javascript/api/@azure/cosmos/connectionpolicy?view=azure-node-latest#@azure-cosmos-connectionpolicy-preferredlocations&preserve-view=true) in the SDK using [ConnectionPolicy](./tutorial-global-distribution.md). During failovers, write operations are sent to the current write region and all reads are sent to the first region within your preferred regions list. For more information about regional failover mechanics, see [availability troubleshooting](troubleshoot-sdk-availability.md).

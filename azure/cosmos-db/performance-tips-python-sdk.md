@@ -42,6 +42,15 @@ When possible, place any applications calling Azure Cosmos DB in the same region
 An app that interacts with a multi-region Azure Cosmos DB account needs to configure 
 [preferred locations](tutorial-global-distribution.md#preferred-locations) to ensure that requests are going to a collocated region.
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 **Enable accelerated networking to reduce latency and CPU jitter**
 
 It is recommended that you follow the instructions to enable [Accelerated Networking](/azure/virtual-network/accelerated-networking-overview) in your [Windows (select for instructions)](/azure/virtual-network/create-vm-accelerated-networking-powershell) or [Linux (select for instructions)](/azure/virtual-network/create-vm-accelerated-networking-cli) Azure VM, in order to maximize performance (reduce latency and CPU jitter).

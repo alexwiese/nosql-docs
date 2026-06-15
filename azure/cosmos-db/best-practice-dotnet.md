@@ -23,6 +23,15 @@ Watch the following video to learn more about using the .NET SDK from an Azure C
 
 ## Checklist
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 |Checkbox  | Subject  |Description  |
 |---------|---------|---------|
 |<input type="checkbox"/> |    SDK version    |   Always use the [latest version](sdk-dotnet-v3.md) of the Azure Cosmos DB SDK available for optimal performance.     |

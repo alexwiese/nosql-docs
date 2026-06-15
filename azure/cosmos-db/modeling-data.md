@@ -28,6 +28,15 @@ After reading this article, you can answer the following questions:
 - How do you express data relationships in a nonrelational database?
 - When do I embed data and when do I link to data?
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Numbers in JSON
 
 Azure Cosmos DB saves documents in JSON, so it's important to determine whether to convert numbers into strings before storing them in JSON. Convert all numbers to a `String` if they might exceed the boundaries of double-precision numbers as defined by [Institute of Electrical and Electronics Engineers (IEEE) 754 binary64](https://www.rfc-editor.org/rfc/rfc8259#ref-IEEE754). The [JSON specification](https://www.rfc-editor.org/rfc/rfc8259#section-6) explains why using numbers outside this boundary is a bad practice due to interoperability problems. These concerns are especially relevant for the partition key column because it's immutable and requires data migration to change later.  

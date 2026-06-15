@@ -20,6 +20,15 @@ The change feed processor is part of the Azure Cosmos DB [.NET V3](https://githu
 
 The main benefit of using the change feed processor is its fault-tolerant design, which assures an *at-least-once* delivery of all the events in the change feed.
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Supported SDKs
 
 |  .NET V3  |   Java    |  Node.js  |  Python   |

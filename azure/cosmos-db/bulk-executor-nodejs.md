@@ -19,6 +19,15 @@ appliesto:
 
 In this guide, use the `executeBulkOperations` feature in the Azure SDK for JavaScript to perform bulk create and update operations in Azure Cosmos DB for NoSQL. This feature adjusts per-partition concurrency, automatically handles retry logic for each individual operation, and performs large quantities (100+) of operations. This feature automatically adjusts concurrency dynamically by increasing when calls succeed without throttling and scaling back when throttling occurs.
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Prerequisites
 
 - An existing Azure Cosmos DB for NoSQL account

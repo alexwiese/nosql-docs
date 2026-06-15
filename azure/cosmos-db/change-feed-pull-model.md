@@ -17,6 +17,15 @@ appliesto:
 
 You can use the change feed pull model to consume the Azure Cosmos DB change feed at your own pace. Similar to the [change feed processor](change-feed-processor.md), you can use the change feed pull model to parallelize the processing of changes across multiple change feed consumers.
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Compare to the change feed processor
 
 Many scenarios can process the change feed by using either the [change feed processor](change-feed-processor.md) or the change feed pull model. The pull model's continuation tokens and the change feed processor's lease container both work as bookmarks for the last processed item or batch of items in the change feed.

@@ -16,7 +16,17 @@ appliesto:
 
 This article walks through the best practices for using the Azure Cosmos DB Java SDK. Following these practices, will help improve your latency, availability, and boost overall performance. 
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Checklist
+
 |Checked  | Topic  |Details/Links  |
 |---------|---------|---------|
 |<input type="checkbox"/> |    SDK Version    |   Always using the [latest version](sdk-java-v4.md) of the Azure Cosmos DB SDK available for optimal performance.     |

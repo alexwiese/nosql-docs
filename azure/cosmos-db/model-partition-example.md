@@ -21,6 +21,15 @@ If you usually work with relational databases, you've probably developed habits 
 
 For an example that illustrates the concepts in this article, download or view this [community-generated source code](https://github.com/jwidmer/AzureCosmosDbBlogExample).
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 > [!IMPORTANT]
 > A community contributor contributed this code example. The Azure Cosmos DB team doesn't support its maintenance.
 
