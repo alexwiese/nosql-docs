@@ -417,8 +417,6 @@
       href: tutorial-query.md
     - name: Create Visual Studio Code notebook
       href: tutorial-create-notebook-vscode.md
-    - name: Use Visual Studio Code extension
-      href: visual-studio-code-extension.md?pivots=api-nosql&context=/azure/cosmos-db/nosql/context/context
     - name: Get started with Azure Cosmos DB best practices in GitHub Copilot
       displayName: visual studio code, github copilot, ai pair programming, copilot
       href: github-copilot-visual-studio-code-best-practices.md
