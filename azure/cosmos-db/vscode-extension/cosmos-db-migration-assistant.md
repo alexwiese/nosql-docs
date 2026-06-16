@@ -194,7 +194,7 @@ Migration Assistant persists the project and phase artifacts under `.cosmosdb-mi
 
 ## Next steps
 
-- Explore the [Azure Cosmos DB extension in Visual Studio Code](../visual-studio-code-extension.md) by trying migrations from different RDBMS platforms to Azure Cosmos DB for NoSQL.
+- Explore the [Azure Cosmos DB extension in Visual Studio Code](overview.md) by trying migrations from different RDBMS platforms to Azure Cosmos DB for NoSQL.
 - To share feedback or report issues, use GitHub: <https://aka.ms/cosmosdb-migration-assistant-report-issue>.
 
 ## Related content
@@ -203,5 +203,5 @@ Migration Assistant persists the project and phase artifacts under `.cosmosdb-mi
 - [Data Modeling - Azure Cosmos DB](../modeling-data.md) — Best practices in data modeling to optimize performance, scalability, and cost in schema-free databases.
 - [Migrate one-to-few relational data - Azure Cosmos DB](../migrate-relational-data.md?source=recommendations) — How to migrate relational data into Azure Cosmos DB for NoSQL.
 - [Azure Cosmos DB Agent Kit - Azure Cosmos DB for NoSQL](../gen-ai/agent-kit.md) — Enhances AI coding assistants with expert-level best practices for Azure Cosmos DB and integrates with tools like GitHub Copilot.
-- [Use Visual Studio Code to Connect and Manage Resources - Azure Cosmos DB](../visual-studio-code-extension.md?pivots=api-nosql) — Quickstart for connecting to Azure Cosmos DB for NoSQL using Visual Studio Code, including querying, inserting, updating, and deleting data.
+- [Use Visual Studio Code to Connect and Manage Resources - Azure Cosmos DB](overview.md) — Quickstart for connecting to Azure Cosmos DB for NoSQL using Visual Studio Code, including querying, inserting, updating, and deleting data.
 - [Azure Cosmos DB Shell Visual Studio Code Extension](../shell/visual-studio-code.md) — Provides a seamless, integrated experience for managing and querying Cosmos DB databases directly from the code editor.
