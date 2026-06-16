@@ -114,6 +114,11 @@
       "source_path_from_root": "/azure/cosmos-db/mongodb/reference-data-plane-security.md",
       "redirect_url": "/azure/cosmos-db/mongodb/security",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/azure/cosmos-db/visual-studio-code-extension.md",
+      "redirect_url": "/azure/cosmos-db/vscode-extension/overview",
+      "redirect_document_id": false
     }
   ]
 }
