@@ -1,7 +1,7 @@
 ---
 title: Migrate to ordered indexes in Azure DocumentDB
 description: Learn how ordered indexes work, understand the key behavior changes, and follow a safe, reversible migration path from non-ordered to ordered indexes.
-author: marcelofonseca
+author: fonsecamar
 ms.author: marcrod
 ms.topic: how-to
 ms.date: 06/03/2026
