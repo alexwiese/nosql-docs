@@ -122,7 +122,7 @@ The following methods to read the change feed are available for each client SDK:
 | --- | --- | --- | --- | --- | --- |
 | [Change feed pull model](change-feed-pull-model.md) | [>= 3.60.0](https://www.nuget.org/packages/Microsoft.Azure.Cosmos) | [>= 4.81.0](https://mvnrepository.com/artifact/com.azure/azure-cosmos) | [>= 4.9.1b1](https://pypi.org/project/azure-cosmos) |  [>= 4.1.0](https://www.npmjs.com/package/@azure/cosmos) | [>= 4.40.0 for all Spark Runtimes](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/cosmos) |
 | [Change feed processor](change-feed-processor.md) | [>= 3.60.0](https://www.nuget.org/packages/Microsoft.Azure.Cosmos) | [>= 4.81.0](https://mvnrepository.com/artifact/com.azure/azure-cosmos) | No | No | No |
-| Azure Functions trigger | Isolated worker [>= 4.16.1](https://www.nuget.org/packages/Microsoft.Azure.Functions.Worker.Extensions.CosmosDB/) | No | No | No | No |
+| Azure Functions trigger | [>= 4.16.1 for isolated worker](https://www.nuget.org/packages/Microsoft.Azure.Functions.Worker.Extensions.CosmosDB/) | No | No | No | No |
 
 > [!NOTE]
 > Regardless of the [connection mode](sdk-connection-modes.md#available-connectivity-modes) that's configured in your application, all requests made with all versions and deletes change feed will use Gateway mode.
