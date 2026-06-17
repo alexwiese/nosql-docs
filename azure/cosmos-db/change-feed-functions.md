@@ -7,7 +7,7 @@ ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.custom: build-2023
 ms.topic: how-to
-ms.date: 07/02/2025
+ms.date: 06/12/2026
 appliesto:
   - ✅ NoSQL
 ---
@@ -30,7 +30,16 @@ With the [Azure Functions trigger for Azure Cosmos DB](/azure/azure-functions/fu
 > To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
 
 > [!NOTE]
-> The Azure Functions trigger uses [latest version change feed mode](change-feed-modes.md#latest-version-change-feed-mode). Currently, the Azure Functions trigger for Azure Cosmos DB is supported for use with the API for NoSQL only.
+> Currently, the Azure Functions trigger for Azure Cosmos DB supports use with the API for NoSQL only.
+
+## Change feed modes
+
+The Azure Functions trigger for Azure Cosmos DB supports both [change feed modes](change-feed-modes.md):
+
+* **Latest version mode** (default): The trigger receives only the most recent version of each changed item. This mode is available across all Azure Functions programming models and languages.
+* **All versions and deletes mode**: The trigger receives a full record of every change, including intermediate updates and deletes. This mode is available for the .NET isolated worker model by using [Microsoft.Azure.Functions.Worker.Extensions.CosmosDB >= 4.16.1](https://www.nuget.org/packages/Microsoft.Azure.Functions.Worker.Extensions.CosmosDB/).
+
+To use all versions and deletes mode, your Azure Cosmos DB account must have [continuous backups](continuous-backup-restore-introduction.md) enabled and the [all versions and deletes change feed feature](change-feed-modes.md#get-started) turned on. For more information about compatibility across SDKs and programming models, see [change feed modes](change-feed-modes.md).
 
 ## Requirements
 
