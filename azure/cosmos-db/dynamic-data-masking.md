@@ -306,6 +306,7 @@ For queries that don't involve masked columns, Dynamic Data Masking has no effec
 1. Materialized views and backups (periodic or continuous) operate on original unmasked data.
 1. Fabric mirroring and Analytical store are not supported by default for accounts with Dynamic Data Masking enabled. To enable these capabilities, contact Microsoft Support.
 1. Complex queries may expose unmasked data or allow inference of sensitive values. Dynamic Data Masking is designed to minimize data exposure for unauthorized users and is not a substitute for restricting direct database access.
+1. Dynamic Data Masking applies only to read and query response projections. Write operations (create, replace, upsert, and patch) act on the unmasked underlying data and can return unmasked data in their responses.
 
 ## Related content
 
