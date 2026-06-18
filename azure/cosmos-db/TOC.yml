@@ -102,6 +102,8 @@
       href: gen-ai/agentic-retrieval.md?context=/azure/cosmos-db/context/context
     - name: Integrate with AI tools
       href: gen-ai/integrations.md?context=/azure/cosmos-db/context/context
+    - name: Get started with LangChain JS/TS
+      href: gen-ai/langchain-javascript-get-started.md?context=/azure/cosmos-db/context/context
     - name: Agent Memories
       items:
         - name: Manage agent memories
