@@ -63,7 +63,7 @@ Capabilities include vector search (DiskANN, Quantized Flat, Flat indexes), full
 
 ### JavaScript / TypeScript
 
-The [`@langchain/azure-cosmosdb`](https://www.npmjs.com/package/@langchain/azure-cosmosdb) package provides `AzureCosmosDBNoSQLVectorStore`, `AzureCosmosDBNoSQLSemanticCache`, and `AzureCosmosDBNoSQLChatMessageHistory`. See the [JS vector store documentation](https://docs.langchain.com/oss/javascript/integrations/vectorstores/azure_cosmosdb_nosql).
+The [`@langchain/azure-cosmosdb`](https://www.npmjs.com/package/@langchain/azure-cosmosdb) package provides `AzureCosmosDBNoSQLVectorStore`, `AzureCosmosDBNoSQLSemanticCache`, and `AzureCosmosDBNoSQLChatMessageHistory`. See the [JS vector store documentation](https://docs.langchain.com/oss/javascript/integrations/vectorstores/azure_cosmosdb_nosql) or follow the [Get started with LangChain JS/TS tutorial](langchain-javascript-get-started.md) for a step-by-step walkthrough.
 
 ### Java
 
