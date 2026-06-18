@@ -9,7 +9,7 @@ metadata:
   ms.author: sidandrews
   ms.service: azure-cosmos-db
   ms.topic: hub-page
-  ms.date: 06/08/2026
+  ms.date: 06/18/2026
   ms.collection:
     - ce-skilling-ai-copilot
   ai-usage: ai-generated
@@ -42,6 +42,9 @@ highlightedContent:
     - title: Azure Cosmos DB Emulator
       itemType: get-started
       url: emulator.md
+    - title: Azure Cosmos DB Agent Kit
+      itemType: get-started
+      url: gen-ai/agent-kit.md
 tools:
   title: Build your first application
   summary: Create a console application using Azure Cosmos DB and your preferred development language and API.
