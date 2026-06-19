@@ -35,6 +35,15 @@ In this quickstart, you deploy a basic Azure Cosmos DB for NoSQL application usi
 
 If you don't have an Azure account, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ### Install the client library
 
 The client library is available through Rust, as the `azure_data_cosmos` crate.
@@ -189,7 +198,7 @@ Use the Visual Studio Code extension for Azure Cosmos DB to explore your NoSQL d
 - Importing bulk data from other sources
 - Managing databases and containers
 
-For more information, see [How-to use Visual Studio Code extension to explore Azure Cosmos DB for NoSQL data](visual-studio-code-extension.md?pivots=api-nosql).
+For more information, see [How-to use Visual Studio Code extension to explore Azure Cosmos DB for NoSQL data](vscode-extension/overview.md).
 
 ## Related content
 

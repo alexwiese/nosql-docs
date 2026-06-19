@@ -25,7 +25,7 @@ The following limits apply to query operations and command execution in Azure Do
 
 #### Example
 
-```mongodb
+```javascript
 db.collection.find({ field: "value" }).maxTimeMS(5000)
 ```
 
@@ -190,6 +190,12 @@ Azure DocumentDB provides built-in replication and high availability (HA) featur
   - In-region high availability (HA)
 
 - Replication isn't available on clusters with [burstable compute](./compute-storage.md#what-is-burstable-compute) or [Free tier](./free-tier.md) clusters.
+
+### Cross-region failover
+
+- [Graceful promotion](./failover-modes.md#graceful-promotion) requires the primary cluster to be reachable so the replication queue can drain. If the primary region is already unavailable, use forced promotion or service-managed failover instead.
+- [Service-managed failover](./failover-modes.md#service-managed-failover) is opt-in. It must be enabled on the primary cluster before a regional outage occurs; it can't be enabled retroactively during an outage.
+- Service-managed failover and graceful promotion require an active cross-region replica. Same-region replicas aren't eligible for cross-region failover modes.
 
 ## Authentication and access control (role-based access control)
 

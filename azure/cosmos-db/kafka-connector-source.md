@@ -1,12 +1,12 @@
 ---
 title: Kafka Connect Source Connector
 description: Azure Cosmos DB source connector provides the capability to read data from the Azure Cosmos DB change feed and publish this data to a Kafka topic. Kafka Connect for Azure Cosmos DB is a connector to read from and write data to Azure Cosmos DB. 
-author: kushagrathapar
+author: seesharprun
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.topic: how-to
 ms.date: 05/13/2022
-ms.author: kuthapar
+ms.author: sidandrews
 appliesto:
   - ✅ NoSQL
 ---

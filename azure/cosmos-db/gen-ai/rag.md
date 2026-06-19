@@ -22,6 +22,15 @@ Retrieval-augmented generation (RAG) combines the power of large language models
 
 Azure Cosmos DB, an operational database that supports vector search, stands out as an excellent platform for implementing RAG. Its ability to handle both operational and analytical workloads in a single database, along with advanced features such as multitenancy and hierarchical partition keys, provides a solid foundation for building sophisticated generative AI applications.
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](agent-kit.md).
+
 ## Key advantages of using Azure Cosmos DB
 
 ### Unified data storage and retrieval

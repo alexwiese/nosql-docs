@@ -1,8 +1,8 @@
 ---
 title: Best practices for Python SDK
 description: Review a list of best practices for using the Azure Cosmos DB Python SDK in a performant manner.
-author: kushagraThapar
-ms.author: kuthapar
+author: seesharprun
+ms.author: sidandrews
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.custom: devx-track-python
@@ -37,6 +37,15 @@ print(client.client_connection._global_endpoint_manager.write_endpoint)
 For more information on how to add multiple regions using the Python SDK, see the [global distribution tutorial](tutorial-global-distribution.md).
 
 ## SDK usage
+
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
 
 ### SDK usage parameters
 

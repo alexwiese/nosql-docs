@@ -1,15 +1,17 @@
 ---
 title: Quickstart - Create a vector index with TypeScript
 description: Learn how to create a vector index in Azure Cosmos DB for NoSQL using the Azure Resource Manager SDK and TypeScript, then insert documents and run vector similarity queries.
-author: diberry
-ms.author: diberry
+author: seesharprun
+ms.author: sidandrews
 ms.reviewer: sidandrews
 ms.devlang: typescript
 ms.topic: quickstart-sdk
-ms.date: 03/13/2026
+ms.date: 05/22/2026
 ms.update-cycle: 180-days
 ms.service: azure-cosmos-db
 ms.subservice: nosql
+ms.collection:
+  - ce-skilling-ai-copilot
 ai-usage: ai-assisted
 ms.custom:
   - devx-track-ts
@@ -32,6 +34,15 @@ Find the [sample code](https://github.com/Azure-Samples/cosmos-db-vector-samples
 
 If you don't have an Azure account, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Clone the repository
 
 Clone the sample repository and navigate to the TypeScript sample directory:
@@ -46,7 +57,7 @@ cd cosmos-db-vector-samples/nosql-create-index-typescript
 This sample demonstrates a three-layer architecture for creating and using vector indexes in Azure Cosmos DB:
 
 | Layer | Tool | What it does |
-|---|---|---|
+| --- | --- | --- |
 | **Azure CLI script** | `scripts/create-resources.sh` | Creates resource group, Azure OpenAI, Azure Cosmos DB account, database, and RBAC assignments |
 | **Configuration** | `src/config.ts` | Loads and validates environment variables into a typed configuration object |
 | **Control plane** | `src/control-plane.ts` using `@azure/arm-cosmosdb` | Creates container with vector index and data-plane RBAC using Azure Resource Manager SDK |
@@ -391,4 +402,3 @@ This script deletes the resource group and all resources within it.
 
 - [Vector database](vector-database.md)
 - [Vector search](vector-search.md)
-

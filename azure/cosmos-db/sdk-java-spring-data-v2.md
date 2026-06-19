@@ -1,13 +1,13 @@
 ---
 title: Spring Data V2 for API for Nosql Release Notes and Resources
 description: Learn about the Spring Data Azure Cosmos DB v2 for API for NoSQL, including release dates, retirement dates, and changes made between each version of the Azure Cosmos DB SQL Async Java SDK.
-author: kushagrathapar
+author: seesharprun
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.devlang: java
 ms.topic: reference
 ms.date: 04/06/2021
-ms.author: kuthapar
+ms.author: sidandrews
 ms.custom: devx-track-java, devx-track-extended-java
 appliesto:
   - ✅ NoSQL
@@ -49,7 +49,7 @@ You can use Spring Data Azure Cosmos DB in your applications hosted in [Azure Sp
 | Resource | Link |
 |---|---|
 | **SDK download** | [Maven](https://mvnrepository.com/artifact/com.microsoft.azure/spring-data-cosmosdb) |
-|**API documentation** | [Spring Data Azure Cosmos DB reference documentation]() |
+|**API documentation** | [Spring Data Azure Cosmos DB reference documentation](https://github.com/microsoft/spring-data-cosmosdb) |
 |**Contribute to the SDK** | [Spring Data Azure Cosmos DB repo on GitHub](https://github.com/microsoft/spring-data-cosmosdb) | 
 |**Spring Boot Starter**| [Azure Cosmos DB Spring Boot Starter client library for Java](https://github.com/MicrosoftDocs/azure-dev-docs/blob/master/articles/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db.md) |
 |**Developer's guide** | [Spring Data Azure Cosmos DB developer's guide](/azure/developer/java/spring-framework/how-to-guides-spring-data-cosmosdb) | 

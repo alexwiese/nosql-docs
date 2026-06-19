@@ -2,15 +2,16 @@
 
 title: Quickstart - Azure Cosmos DB vector search with Java
 description: Use this quickstart to implement vector search in Azure Cosmos DB with Java. Store and query hotel data with embeddings.
-author: diberry
-ms.author: diberry
+author: seesharprun
+ms.author: sidandrews
 ms.reviewer: jcodella
 ms.devlang: java
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.topic: quickstart-sdk
-ms.date: 03/26/2026
+ms.date: 05/22/2026
 ms.update-cycle: 180-days
+ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
 ms.custom:
   - devx-track-extended-java
@@ -51,6 +52,15 @@ Find the sample code with resource provisioning on [GitHub](https://github.com/A
 
 - [Java 21+](/java/openjdk/download)
 - [Maven 3.8+](https://maven.apache.org/download.cgi)
+
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
 
 ## Create data file with vectors
 

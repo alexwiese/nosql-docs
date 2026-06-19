@@ -9,7 +9,9 @@ metadata:
   ms.author: sidandrews
   ms.service: azure-cosmos-db
   ms.topic: hub-page
-  ms.date: 12/17/2025
+  ms.date: 06/18/2026
+  ms.collection:
+    - ce-skilling-ai-copilot
   ai-usage: ai-generated
   appliesto:
     - ✅ NoSQL
@@ -40,6 +42,9 @@ highlightedContent:
     - title: Azure Cosmos DB Emulator
       itemType: get-started
       url: emulator.md
+    - title: Azure Cosmos DB Agent Kit
+      itemType: get-started
+      url: gen-ai/agent-kit.md
 tools:
   title: Build your first application
   summary: Create a console application using Azure Cosmos DB and your preferred development language and API.
@@ -78,10 +83,7 @@ conceptualContent:
               url: /cosmos-db/query/overview
             - text: Model document data
               itemType: concept
-              url: nosql/modeling-data.md
-          footerLink:
-            text: See more
-            url: nosql/index.yml
+              url: modeling-data.md
         - title: MongoDB
           summary: Migrate existing MongoDB applications seamlessly with full wire protocol compatibility and familiar MongoDB tools.
           links:

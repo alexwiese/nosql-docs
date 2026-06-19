@@ -5,7 +5,7 @@ author: markjbrown
 ms.author: mjbrown
 ms.service: azure-cosmos-db
 ms.topic: overview
-ms.date: 02/02/2026
+ms.date: 06/08/2026
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
 adobe-target: true
@@ -30,9 +30,20 @@ The surge of AI-powered applications created another layer of complexity, becaus
 
 Azure Cosmos DB simplifies and expedites your application development by being the single database for your operational data needs, from [geo-replicated distributed caching](https://medium.com/@marcodesanctis2/using-azure-cosmos-db-as-your-persistent-geo-replicated-distributed-cache-b381ad80f8a0) to back up to [vector indexing and search](vector-database.md). It provides the data infrastructure for modern applications like [AI agent](ai-agents.md), digital commerce, Internet of Things, and booking management. It can accommodate all your operational data models, including document, vector, key-value, graph, and table.
 
+If you're comparing Azure database services to find the right fit for your workload, see [Choose an Azure data service](/azure/architecture/guide/technology-choices/data-store-overview) in the Azure Architecture Center.
+
 ## An AI database providing industry-leading capabilities...
 
 ## ...for free
+
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
 
 Azure Cosmos DB is a fully managed NoSQL and vector database. It offers single-digit millisecond response times, automatic and instant scalability, along with guaranteed speed at any scale. Business continuity is assured with [SLA-backed](https://azure.microsoft.com/support/legal/sla/cosmos-db) availability and enterprise-grade security.
 

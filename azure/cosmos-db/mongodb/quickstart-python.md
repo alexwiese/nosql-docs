@@ -8,8 +8,9 @@ ms.service: azure-cosmos-db
 ms.subservice: mongodb
 ms.devlang: python
 ms.topic: quickstart-sdk
-ms.date: 04/08/2025
+ms.date: 05/13/2026
 ms.custom: devx-track-python, devx-track-extended-azdevcli, sfi-image-nochange
+ai-usage: ai-assisted
 appliesto:
 - ✅ MongoDB
 # CustomerIntent: As a developer, I want to learn the basics of the Python library so that I can build applications with Azure Cosmos DB for MongoDB.
@@ -118,6 +119,7 @@ from pymongo import MongoClient
 - [Create a document](#create-a-document)
 - [Get a document](#read-a-document)
 - [Query documents](#query-documents)
+- [Delete documents](#delete-documents)
 
 The sample code in the template uses a database named `cosmicworks` and collection named `products`. The `products` collection contains details such as name, category, quantity, and a unique identifier for each product. The collection uses the `/category` property as a shard key.
 
@@ -197,6 +199,29 @@ for document in matched_documents:
     # Do something with each item
 ```
 
+### Delete documents
+
+Delete a single document from the collection using `collection.delete_one`. This method performs a point delete using both the unique identifier (`_id`) and shard key (`category`) fields to efficiently target a single document without a cross-shard operation.
+
+```python
+filter = {
+    "_id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+    "category": "gear-surf-surfboards"
+}
+result = collection.delete_one(filter)
+print(f"Deleted document: {result.deleted_count}")
+```
+
+Delete multiple documents from the collection using `collection.delete_many`. This method removes all documents that match the specified filter. Check `deleted_count` to confirm how many documents were removed.
+
+```python
+filter = {
+    "category": "gear-surf-surfboards"
+}
+result = collection.delete_many(filter)
+print(f"Deleted documents: {result.deleted_count}")
+```
+
 ### Explore your data
 
 Use the Visual Studio Code extension for Azure Cosmos DB to explore your MongoDB data. You can perform core database operations including, but not limited to:
@@ -206,7 +231,7 @@ Use the Visual Studio Code extension for Azure Cosmos DB to explore your MongoDB
 - Importing bulk data from other sources
 - Managing databases and collections
 
-For more information, see [How-to use Visual Studio Code extension to explore Azure Cosmos DB for MongoDB data](../visual-studio-code-extension.md?pivots=api-mongodb&tabs=MongoDB).
+For more information, see [How-to use Visual Studio Code extension to explore Azure Cosmos DB for MongoDB data](../vscode-extension/overview.md).
 
 ## Clean up resources
 

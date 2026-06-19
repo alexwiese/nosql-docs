@@ -34,7 +34,7 @@ This **November 18, 2025** release renames the service from **Azure Cosmos DB fo
 
 - Reserved instances support: Save on costs over one-year or three-year terms. For more information, see [Azure DocumentDB pricing](https://azure.microsoft.com/pricing/details/document-db/).
 
-- Advanced full-text search: fuzzy search and proximity matching supported. For more information, see [hybrid search](hybrid-search.md)
+- Advanced full-text search: fuzzy search and proximity matching supported. For more information, see [hybrid search](full-text-search-hybrid.md)
 
 - Azure Cosmos DB for MongoDB to Azure DocumentDB migration: Integrated path for users moving from Azure Cosmos DB for MongoDB to Azure DocumentDB.
 
@@ -46,7 +46,7 @@ This **October 10, 2025** release introduces schema validation with `$jsonSchema
 
 - **\[Preview\]** Add support for index pushdown for sort queries that filter on the `_id` field.
 
-- **\[Preview\]** Add schema validation support for [`$jsonSchema`](./operators/evaluation-query/$jsonschema.md) during rule creation or modification.
+- **\[Preview\]** Add schema validation support for [`$jsonSchema`](/documentdb/query/operators/evaluation-query/$jsonschema?context=/azure/documentdb/context/context) during rule creation or modification.
 
 - **\[Preview\]** Add schema enforcement with CSFLE (client side field level encryption) integration.
 

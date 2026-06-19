@@ -24,6 +24,15 @@ This tutorial provides instructions on how to use the bulk executor .NET library
 
 Currently, bulk executor library is supported by the Azure Cosmos DB for NoSQL and API for Gremlin accounts only. This article describes how to use the bulk executor .NET library with API for NoSQL accounts. To learn how to use the bulk executor .NET library with API for Gremlin accounts, see [Ingest data in bulk in the Azure Cosmos DB for Gremlin by using a bulk executor library](gremlin/bulk-executor-dotnet.md).
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Prerequisites
 
 * Latest [!INCLUDE [cosmos-db-visual-studio](includes/cosmos-db-visual-studio.md)]

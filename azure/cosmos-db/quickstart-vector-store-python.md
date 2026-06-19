@@ -2,15 +2,16 @@
 
 title: Quickstart - Vector Search with Python
 description: Use this quickstart to implement vector search in Azure Cosmos DB with Python using the text-embedding-3-small model. Store and query hotel data with embeddings.
-author: diberry
-ms.author: diberry
+author: seesharprun
+ms.author: sidandrews
 ms.reviewer: jcodella
 ms.devlang: python
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.topic: quickstart-sdk
-ms.date: 03/26/2026
+ms.date: 05/22/2026
 ms.update-cycle: 180-days
+ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
 ms.custom:
   - devx-track-python
@@ -50,6 +51,15 @@ Find the sample code with resource provisioning on [GitHub](https://github.com/A
   - [Cosmos DB extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)
 
 - [Python 3.10 or later](https://www.python.org/downloads/)
+
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
 
 ## Create data file with vectors
 
@@ -506,4 +516,3 @@ For detailed information on distance functions, see [What are distance functions
 - [Document Indexer for Azure Cosmos DB (preview)](gen-ai/document-indexer.md)
 - [Vector embeddings in Azure Cosmos DB](gen-ai/vector-embeddings.md)
 - [Azure RBAC built-in roles](/azure/role-based-access-control/built-in-roles)
-

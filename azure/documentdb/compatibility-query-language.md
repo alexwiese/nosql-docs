@@ -20,13 +20,16 @@ Developers can keep the same client drivers, software development kits (SDKs), a
 
 ## Query language support
 
-In addition to protocol support, Azure DocumentDB provides comprehensive support for MongoDB query language constructs as well. 
+In addition to protocol support, Azure DocumentDB provides comprehensive support for MongoDB query language constructs as well.
+
+> [!NOTE]
+> Azure DocumentDB delivers 99.03% MongoDB compatibility via the wire protocol.
 
 ### Compatibility philosophy
 
 Overall product compatibility is determined by evaluating the number of MongoDB operators (Aggregation Stages, Aggregation Operators, Query, and Projection Operators and Update Operators) supported by the service. MongoDB commands and admin operations are excluded from this calculation because Azure DocumentDB, as a PaaS offering, supports most these commands in-house, eliminating the need for user intervention. These commands aren't exposed to users; however, based on usage patterns and customer feedback, a subset of commonly used commands is available to simplify the user experience.
 
-The overall product compatibility today stands at **99.02%**. The compatibility summary table below details support for each operator type:
+The compatibility summary table below details support for each operator type:
 
 | | Total | Supported | Percentage |
 | --- | --- | --- | --- |
@@ -555,6 +558,6 @@ Azure DocumentDB supports the following index properties:
 
 ## Related content
 
-- [MongoDB Query Language (MQL) commands](commands/index.md)
-- [MongoDB Query Language (MQL) operators](operators/index.md)
+- [MongoDB Query Language (MQL) commands](/documentdb/query/commands/index?context=/azure/documentdb/context/context)
+- [MongoDB Query Language (MQL) operators](/documentdb/query/operators/index?context=/azure/documentdb/context/context)
 - [MongoDB feature compatibility](compatibility-features.md)

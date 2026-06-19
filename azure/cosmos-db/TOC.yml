@@ -74,16 +74,20 @@
   items:
     - name: Why use for AI apps?
       href: gen-ai/why-cosmos-ai.md
-    - name: Semantic Reranker (Preview)
+    - name: Semantic Reranker (preview)
       href: gen-ai/semantic-reranker.md
     - name: Use vector search
       items:
         - name: Vector indexing and search
           href: vector-search.md
+        - name: Integrated Embeddings
+          href: integrated-embeddings.md
         - name: Sharded DiskANN for focused search
           href: gen-ai/sharded-diskann.md
         - name: Tips for vector search performance
           href: gen-ai/vector-search-performance-tips.md
+        - name: Multi-vector search with MaxSim
+          href: gen-ai/multi-vector-search.md
     - name: Full text indexing and search
       items:
         - name: Full text search overview
@@ -94,10 +98,18 @@
           href: gen-ai/full-text-search-faq.yml?context=/azure/cosmos-db/context/context
     - name: Implement hybrid search
       href: gen-ai/hybrid-search.md?context=/azure/cosmos-db/context/context
+    - name: Implement agentic retrieval
+      href: gen-ai/agentic-retrieval.md?context=/azure/cosmos-db/context/context
     - name: Integrate with AI tools
       href: gen-ai/integrations.md?context=/azure/cosmos-db/context/context
-    - name: Manage agent memories
-      href: gen-ai/agentic-memories.md
+    - name: Get started with LangChain JS/TS
+      href: gen-ai/langchain-javascript-get-started.md?context=/azure/cosmos-db/context/context
+    - name: Agent Memories
+      items:
+        - name: Manage agent memories
+          href: gen-ai/agentic-memories.md
+        - name: Agent Memory Toolkit
+          href: gen-ai/agent-memory-toolkit.md
     - name: Build a RAG chatbot
       href: gen-ai/rag-chatbot.md?context=/azure/cosmos-db/context/context
     - name: Index documents for search
@@ -407,8 +419,6 @@
       href: tutorial-query.md
     - name: Create Visual Studio Code notebook
       href: tutorial-create-notebook-vscode.md
-    - name: Use Visual Studio Code extension
-      href: visual-studio-code-extension.md?pivots=api-nosql&context=/azure/cosmos-db/nosql/context/context
     - name: Get started with Azure Cosmos DB best practices in GitHub Copilot
       displayName: visual studio code, github copilot, ai pair programming, copilot
       href: github-copilot-visual-studio-code-best-practices.md
@@ -487,12 +497,16 @@
           href: how-to-migrate-from-change-feed-library.md
         - name: Async Java sample with change feed
           href: how-to-java-change-feed.md
-    - name: Global secondary indexes (preview)
+    - name: Global secondary indexes
       items:
         - name: Overview
           href: global-secondary-indexes.md
-        - name: Configure global secondary indexes (preview)
+        - name: Configure global secondary indexes
           href: how-to-configure-global-secondary-indexes.md
+    - name: Distributed transactions (preview)
+      items:
+        - name: Configure distributed transactions (preview)
+          href: how-to-configure-and-use-distributed-transactions.md
     - name: Index and query geospatial data
       displayName: geospatial, geojson, spatial, index, query, geography, geometry
       href: how-to-geospatial-index-query.md
@@ -599,6 +613,8 @@
               href: performance-tips-java-sdk-v4.md
             - name: Connection Configurations for Java SDK v4
               href: tune-connection-configurations-java-sdk-v4.md
+            - name: Throughput control groups
+              href: throughput-control-java.md
             - name: Async Java SDK v2
               href: performance-tips-async-java.md
             - name: Sync Java SDK v2
@@ -643,7 +659,7 @@
       items:
         - name: Emulator
           href: emulator.md?context=/azure/cosmos-db/context/context
-        - name: Linux emulator (preview)
+        - name: Linux emulator
           href: emulator-linux.md?context=/azure/cosmos-db/context/context
         - name: Release notes
           href: emulator-release-notes.md
@@ -772,6 +788,12 @@
               href: how-to-manage-conflicts.md
         - name: Convert session token format
           href: how-to-convert-session-token.md
+    - name: Per-partition automatic failover
+      items:
+        - name: Overview
+          href: per-partition-automatic-failover.md
+        - name: Configure per-partition automatic failover
+          href: how-to-configure-per-partition-automatic-failover.md
 - name: Manage your account
   items:
     - name: Overview of resource model
@@ -814,8 +836,10 @@
           href: /azure/operational-excellence/relocation-cosmos-db?context=/azure/cosmos-db/context/context
         - name: Prevent changes or deletion
           href: resource-locks.md?context=/azure/cosmos-db/context/context
-        - name: Enable Per Partition Automatic Failover
-          href: how-to-configure-per-partition-automatic-failover.md
+        - name: Soft delete (preview)
+          href: soft-delete.md
+        - name: How to soft delete (preview)
+          href: how-to-soft-delete.md
     - name: Back up and restore
       items:
         - name: Back up and restore introduction
@@ -868,6 +892,8 @@
               href: periodic-backup-storage-redundancy.md?context=/azure/cosmos-db/context/context
             - name: Request data restore
               href: periodic-backup-request-data-restore.md?context=/azure/cosmos-db/context/context
+        - name: Azure Backup for Cosmos DB
+          href: long-term-retention-backup-introduction.md?context=/azure/cosmos-db/context/context
     - name: Monitor
       items:
         - name: Monitor Azure Cosmos DB
@@ -930,18 +956,18 @@
       href: network-bandwidth.md?context=/azure/cosmos-db/context/context
 - name: Tools & Extensions
   items:
-    - name: Azure Cosmos DB Shell
+    - name: Azure Cosmos DB Shell (preview)
       displayName: CLI, Command-line, Shell, Tools, Extensions, MCP
       items:
-        - name: Overview
-          href: shell/overview.md?context=/azure/cosmos-db/context/context
+        - name: Overview (preview)
+          href: shell/index.md?context=/azure/cosmos-db/context/context
         - name: Installation guide
           href: shell/install.md?context=/azure/cosmos-db/context/context
         - name: Get started
           href: shell/get-started.md?context=/azure/cosmos-db/context/context
         - name: Command reference
           href: shell/command-reference.md?context=/azure/cosmos-db/context/context
-        - name: VS Code extension
+        - name: Visual Studio Code extension
           href: shell/visual-studio-code.md?context=/azure/cosmos-db/context/context
         - name: MCP server setup
           href: shell/model-context-protocol-setup.md?context=/azure/cosmos-db/context/context
@@ -949,6 +975,8 @@
           href: shell/security.md?context=/azure/cosmos-db/context/context
         - name: Troubleshooting guide
           href: shell/troubleshooting.md?context=/azure/cosmos-db/context/context
+    - name: Visual Studio Code extension
+      href: vscode-extension/TOC.yml
 - name: Analytics with Microsoft Fabric
   items:
     - name: Overview
@@ -999,7 +1027,7 @@
       items:
         - name: Overview
           href: synapse-link.md?context=/azure/cosmos-db/context/context
-        - name: Configure Synapse Link
+        - name: Configure Azure Synapse Link
           href: configure-synapse-link.md?context=/azure/cosmos-db/context/context
         - name: Analytical Store Introduction
           href: analytical-store-introduction.md?context=/azure/cosmos-db/context/context
@@ -1007,7 +1035,7 @@
           href: analytical-store-change-data-capture.md?context=/azure/cosmos-db/context/context
         - name: Change Data Capture Getting Started
           href: get-started-change-data-capture.md?context=/azure/cosmos-db/context/context
-        - name: Power BI with Synapse Link
+        - name: Power BI with Azure Synapse Link
           href: integrated-power-bi-synapse-link.md?context=/azure/cosmos-db/context/context
         - name: Configure Private Endpoints
           href: analytical-store-private-endpoints.md?context=/azure/cosmos-db/context/context

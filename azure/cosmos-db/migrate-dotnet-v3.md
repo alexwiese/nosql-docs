@@ -19,7 +19,7 @@ appliesto:
 > To learn about the Azure Cosmos DB .NET SDK v3, see the [Release notes](sdk-dotnet-v3.md), the [.NET GitHub repository](https://github.com/Azure/azure-cosmos-dotnet-v3), .NET SDK v3 [Performance Tips](performance-tips-dotnet-sdk-v3.md), and the [Troubleshooting guide](troubleshoot-dotnet-sdk.md).
 >
 
-This article highlights some of the considerations of upgrading your existing .NET application to the newer Azure Cosmos DB .NET SDK v3 for API for NoSQL. Azure Cosmos DB .NET SDK v3 corresponds to the Microsoft.Azure.Azure Cosmos DB namespace. You can use the information provided in this doc if you're migrating your application from any of the following Azure Cosmos DB .NET SDKs:
+This article highlights some of the considerations for upgrading your existing .NET application to the newer Azure Cosmos DB .NET SDK v3 for API for NoSQL. Azure Cosmos DB .NET SDK v3 corresponds to the `Microsoft.Azure.Cosmos` namespace. Use the information in this article if you're migrating your application from any of the following Azure Cosmos DB .NET SDKs:
 
 * Azure Cosmos DB .NET Framework SDK v2 for API for NoSQL
 * Azure Cosmos DB .NET Core SDK v2 for API for NoSQL
@@ -28,6 +28,15 @@ The instructions in this article also help you to migrate the following external
 
 * .NET change feed processor library 2.0
 * .NET bulk executor library 1.1 or greater
+
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
 
 ## What's new in the .NET V3 SDK
 

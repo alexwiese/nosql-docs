@@ -1,13 +1,13 @@
 ---
 title: Performance Tips for Python SDK
 description: Learn client configuration options to improve Azure Cosmos DB database performance for Python SDK
-author: kushagraThapar
+author: seesharprun
 ms.service: azure-cosmos-db
 ms.subservice: nosql
 ms.devlang: python
 ms.topic: how-to
 ms.date: 04/08/2024
-ms.author: kuthapar
+ms.author: sidandrews
 ms.custom: devx-track-python, devx-track-extended-python
 appliesto:
   - ✅ NoSQL
@@ -41,6 +41,15 @@ When possible, place any applications calling Azure Cosmos DB in the same region
 
 An app that interacts with a multi-region Azure Cosmos DB account needs to configure 
 [preferred locations](tutorial-global-distribution.md#preferred-locations) to ensure that requests are going to a collocated region.
+
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
 
 **Enable accelerated networking to reduce latency and CPU jitter**
 

@@ -40,6 +40,15 @@ With Azure Cosmos DB, you can add or remove the regions associated with your acc
 
 :::image type="content" source="./media/distribute-data-globally/deployment-topology.png" alt-text="Diagram that shows the highly available deployment topology." lightbox="./media/distribute-data-globally/deployment-topology.png":::
 
+> [!TIP]
+> Agent Kit helps coding agents work with Azure Cosmos DB quickly and efficiently using recommended best practices. To get started, run:
+>
+> ```bash
+> npx skills add AzureCosmosDB/cosmosdb-agent-kit
+> ```
+>
+> To learn more, see [Azure Cosmos DB Agent Kit](gen-ai/agent-kit.md).
+
 ## Key benefits of global distribution
 
 **Build global active-active apps.** With its novel multi-region writes replication protocol, every region supports both writes and reads. The multi-region writes capability also enables:
@@ -54,7 +63,7 @@ With Azure Cosmos DB, you can add or remove the regions associated with your acc
 
 **Build highly available apps.** Running a database in multiple regions worldwide increases the availability of a database. If one region is unavailable, other regions automatically handle application requests. Azure Cosmos DB offers 99.999% read and write availability for multi-region databases.
 
-**Maintain business continuity during regional outages.** Azure Cosmos DB supports [service-managed failover](how-to-manage-database-account.yml#enable-service-managed-failover-for-your-azure-cosmos-db-account) during a regional outage. During a regional outage, Azure Cosmos DB continues to maintain its latency, availability, consistency, and throughput SLAs. To help make sure that your entire application is highly available, Azure Cosmos DB offers a manual failover API to simulate a regional outage. By using this API, you can carry out regular business continuity drills.
+**Maintain business continuity during regional outages.** Azure Cosmos DB supports [forced failover](how-to-manage-database-account.yml#perform-forced-failover-for-your-azure-cosmos-db-account) during a regional outage. During a regional outage, Azure Cosmos DB continues to maintain its latency, availability, consistency, and throughput SLAs. To help make sure that your entire application is highly available, Azure Cosmos DB offers a manual failover API to simulate a regional outage. By using this API, you can carry out regular business continuity drills.
 
 **Scale read-and-write throughput globally.** You can enable every region to be writable and elastically scale reads and writes all around the world. The throughput that your application configures on an Azure Cosmos DB database or a container is provisioned across all regions associated with your Azure Cosmos DB account. The provisioned throughput is guaranteed by [financially backed SLAs](https://azure.microsoft.com/support/legal/sla/cosmos-db/v1_3/).
 

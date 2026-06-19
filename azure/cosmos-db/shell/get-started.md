@@ -17,7 +17,7 @@ Get started with Azure Cosmos DB Shell in just a few minutes with these practica
 
 - Azure Cosmos DB Shell installed ([Installation Guide](install.md))
 - Azure Cosmos DB account
-- Authentication configured (Entra ID, Managed Identity, or Account Keys)
+- Authentication configured (Microsoft Entra ID, Managed Identity, or Account Keys)
 
 ## Launch the shell
 
@@ -32,19 +32,38 @@ CS >
 
 ## Connect to your account
 
-When you launch Cosmos DB Shell, it prompts you for authentication. You can:
+When launched without connection arguments, Azure Cosmos DB Shell starts in a disconnected state.
+Use the `connect` command to authenticate and connect to an account. The shell
+automatically selects the appropriate credential type based on the arguments you provide.
 
-- **Use Entra ID** (Recommended)
-  - Follow the browser authentication flow
-  - Most secure method
+**Use Microsoft Entra ID** (recommended):
 
-- **Use Managed Identity** (Production)
-  - Automatically uses Azure managed identity
-  - Best for production environments
+```bash
+CS > connect https://<account-name>.documents.azure.com:443/ --tenant=<tenant-id>
+```
 
-- **Use Account Key** (Development)
-  - Provide connection string or account key
-  - Quick for development/testing
+This starts the browser sign-in flow. You can optionally add `--hint=user@contoso.com` to pre-fill the login.
+
+**Use Managed Identity** (production):
+
+```bash
+CS > connect https://<account-name>.documents.azure.com:443/ --managed-identity=<client-id>
+```
+
+For system-assigned managed identity, use the endpoint-only form — `DefaultAzureCredential` includes `ManagedIdentityCredential` in its chain automatically:
+
+```bash
+CS > connect https://<account-name>.documents.azure.com:443/
+```
+
+**Use Account Key** (development/testing):
+
+```bash
+CS > connect "AccountEndpoint=https://<account-name>.documents.azure.com:443/;AccountKey=<account-key>;"
+```
+
+> [!NOTE]
+> Quote the connection string. A connection string contains `;`, which the shell treats as a command separator.
 
 ## Basic navigation
 

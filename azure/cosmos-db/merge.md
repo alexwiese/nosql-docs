@@ -40,7 +40,7 @@ To check whether an Azure Cosmos DB account is eligible for the preview, you can
 
 Containers that meet both of these conditions are likely to benefit from merging partitions:
 
-- **Condition 1**: The current RU/s per physical partition is <3000 RU/s
+- **Condition 1**: The current RU/s per physical partition is ≤ 5,000 RU/s.
 - **Condition 2**: The current average storage in GB per physical partition is <20 GB
 
 Condition 1 often occurs when you have previously scaled up the RU/s (often for a data ingestion) and now want to scale down in steady state.

@@ -80,7 +80,7 @@ To enable this feature for Azure Cosmos DB for NoSQL, follow these steps:
 The registration request is autoapproved, but it might take 15 minutes to take effect.
 
 > [!NOTE]
-> If you want to use vector search on collections with [hierarchical partition keys](hierarchical-partition-keys.md), please reach out to team at: cosmossearch@microsoft.com to configure your account to optimally leverage the partitioning scheme during search. 
+> If you want to use vector search on collections with [hierarchical partition keys](hierarchical-partition-keys.md), please reach out our to team at: cosmossearch@microsoft.com to configure your account to optimally leverage the partitioning scheme during search. 
 
 ## Container vector policies
 
@@ -225,7 +225,8 @@ You can also optionally configure a `quantizerType` within each vectorIndexes en
   - **product** (default)
 Uses standard product quantization. Provides balanced performance and accuracy for most workloads.
   - **spherical** (public preview)
-This quantization method can reduce quantization time, leading to slightly faster indexing times and better performance. It can also provide higher and more stable recall over time with very high-dimensional embeddings. Currently available in public preview.
+
+This quantization method can reduce quantization time, leading to slightly faster indexing times and improved performance. This method can also provide higher and more stable recall over time with very high-dimensional embeddings. Currently available in public preview.
 
 An example of how to define the `quantizerType` is shown below:
 ```json
